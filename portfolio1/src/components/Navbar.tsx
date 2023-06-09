@@ -27,10 +27,16 @@ export default function Navbar() {
               <a>Homepage</a>
             </li>
             <li>
-              <a>Portfolio</a>
+              <a>Projects</a>
             </li>
             <li>
               <a>About</a>
+            </li>
+            <li>
+              <a>Blog</a>
+            </li>
+            <li>
+              <a>Open Source</a>
             </li>
           </ul>
         </div>
