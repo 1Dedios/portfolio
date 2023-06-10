@@ -1,12 +1,12 @@
 import Image from "next/image";
-import Watermelon from "@/images/Watermelon_Me.png";
+import logo from "@/images/logo.png";
 
 export default function Footer() {
   return (
     <>
       <div className="footer footer-center p-10 bg-primary text-primary-content">
         <div>
-          <Image src={Watermelon} alt="Watermelon Me" />
+          <Image src={logo} alt="Watermelon Me" width={250} height={100} />
 
           <p>Copyright © 2022-2023 - Eddie Padilla</p>
         </div>
