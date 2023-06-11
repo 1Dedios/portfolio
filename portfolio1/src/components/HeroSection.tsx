@@ -1,4 +1,7 @@
+import Button from "@/components/Button";
+
 export default function HeroSection() {
+  let buttonText = "...learn more";
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
@@ -11,7 +14,7 @@ export default function HeroSection() {
               Engineer/Web Developer. I am passionate about solving problems
               through Technology and building cool things 😛 for the Human Race.
             </p>
-            {/* put a button that takes them to the about you section */}
+            <Button className={"bg-primary"} text={buttonText} />
           </div>
         </div>
       </div>
