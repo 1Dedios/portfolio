@@ -14,7 +14,12 @@ export default function HeroSection() {
               passionate about solving problems through Technology and building
               cool things 😛 for the Human Race.
             </p>
-            <Button className={"bg-primary border-double"} text={buttonText} />
+            <Button
+              className={
+                "bg-primary hover:bg-cyan-600 border-yellow-400 p-2 border-double"
+              }
+              text={buttonText}
+            />
           </div>
         </div>
       </div>
