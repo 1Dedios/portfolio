@@ -8,13 +8,13 @@ export default function HeroSection() {
         <div className="hero-content text-center">
           <div className="max-w-md">
             <h1 className="text-5xl font-bold">Eddie P</h1>
-            <p>Full Stack Engineer</p>
+            <h3>Full Stack Engineer</h3>
             <p>
-              Highly skilled and professional JavaScript/Java Software
-              Engineer/Web Developer. I am passionate about solving problems
-              through Technology and building cool things 😛 for the Human Race.
+              Highly skilled, professional polyglot Software Developer. I am
+              passionate about solving problems through Technology and building
+              cool things 😛 for the Human Race.
             </p>
-            <Button className={"bg-primary"} text={buttonText} />
+            <Button className={"bg-primary border-double"} text={buttonText} />
           </div>
         </div>
       </div>
