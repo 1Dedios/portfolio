@@ -8,7 +8,7 @@ export default function ProjectSection() {
   let firstButtonText = "text";
 
   return (
-    <div className="min-h-full h-80">
+    <div className="min-h-full h-fit px-4 py-8">
       <Card
         image={logo}
         alt={firstCardAltText}
