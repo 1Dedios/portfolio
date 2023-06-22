@@ -6,7 +6,7 @@ import { UilEnvelopeMinus } from "@iconscout/react-unicons";
 
 export default function Navbar() {
   return (
-    <div className="navbar bg-purple">
+    <div className="navbar bg-purple shadow-lx glass">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
