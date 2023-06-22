@@ -8,7 +8,7 @@ export default function HeroSection() {
   return (
     <div>
       <div
-        className="hero min-h-screen bg-auto"
+        className="hero min-h-screen bg-auto bg-purple"
         style={{
           backgroundImage: "url(/dedios_logo.png)",
         }}
