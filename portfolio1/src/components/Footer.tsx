@@ -11,7 +11,7 @@ export default function Footer() {
         <div>
           <Image src={logo} alt="Watermelon Me" width={250} height={100} />
 
-          <p>Copyright © 2022-2023 - Eddie Padilla</p>
+          <p>Copyright © 2022-2023 - Created w/ ❤️ ©️2023 Eddie Padilla</p>
         </div>
         <div>
           <div className="grid grid-flow-col gap-4">
