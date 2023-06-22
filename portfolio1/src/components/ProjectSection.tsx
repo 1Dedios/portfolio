@@ -9,6 +9,7 @@ export default function ProjectSection() {
 
   return (
     <div className="min-h-full h-fit px-4 py-8">
+      <h1 className="text-center">Projects</h1>
       <Card
         image={logo}
         alt={firstCardAltText}
