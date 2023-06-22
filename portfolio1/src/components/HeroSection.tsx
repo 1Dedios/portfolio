@@ -10,13 +10,22 @@ export default function HeroSection() {
         <div className="hero-content text-center">
           <div className="max-w-md">
             <h1 className="text-5xl font-bold">Eddie P</h1>
-            <p>Full Stack Engineer</p>
+            <h3>Full Stack Engineer</h3>
             <p>
+<<<<<<< HEAD
               Highly skilled, professional, polyglot Software Developer. I am
+=======
+              Highly skilled, professional polyglot Software Developer. I am
+>>>>>>> 6ba8218bda07940fd7d13173f21ccd4805c408d3
               passionate about solving problems through Technology and building
               cool things 😛 for the Human Race.
             </p>
-            <Button className={"bg-primary"} text={buttonText} />
+            <Button
+              className={
+                "bg-primary hover:bg-cyan-600 border-yellow-400 p-2 border-double"
+              }
+              text={buttonText}
+            />
           </div>
         </div>
       </div>

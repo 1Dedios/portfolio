@@ -1,6 +1,8 @@
 import Image from "next/image";
-import Logo from "/public/logo.png";
-import Button from "@/components/Button";
+import Logo from "@/images/logo.png";
+import { UilGithub } from "@iconscout/react-unicons";
+import { UilLinkedin } from "@iconscout/react-unicons";
+import { UilEnvelopeMinus } from "@iconscout/react-unicons";
 
 export default function Navbar() {
   return (
@@ -50,8 +52,16 @@ export default function Navbar() {
           <Image src={Logo} alt="logo" width={160} height={160} />
         </a>
       </div>
-      <div className="navbar-end">
-        <Button text={"Contact"} />
+      <div className="navbar-end gap-4">
+        <a>
+          {" "}
+          <UilLinkedin />{" "}
+        </a>
+        <a>
+          {" "}
+          <UilGithub />{" "}
+        </a>
+        <UilEnvelopeMinus />
       </div>
     </div>
   );
