@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Logo from "@/images/logo.png";
+import Logo from "/public/logo.png";
 import { UilGithub } from "@iconscout/react-unicons";
 import { UilLinkedin } from "@iconscout/react-unicons";
 import { UilEnvelopeMinus } from "@iconscout/react-unicons";
