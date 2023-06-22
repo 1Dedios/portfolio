@@ -1,17 +1,17 @@
-export default function Card() {
+import Image from "next/image";
+import Button from "@/components/Button";
+
+export default function Card({ image, alt, cardText, cardTitle, buttonText }) {
   return (
-    <div className="card md:card-side bg-base-100 shadow-l">
+    <div className="card w-96 glass">
       <figure>
-        <img
-          src="/images/stock/photo-1494232410401-ad00d5433cfa.jpg"
-          alt="Album"
-        />
+        <Image src={image} alt={alt} />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">New album is released!</h2>
-        <p>Click the button to listen on Spotiwhy app.</p>
+        <h2>{cardTitle}</h2>
+        <p>{cardText}</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Listen</button>
+          <Button text={buttonText} className="btn-primary" />
         </div>
       </div>
     </div>
