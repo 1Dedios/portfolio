@@ -15,13 +15,12 @@ export default function HeroSection() {
       >
         <div className="hero-content text-center">
           <div className="max-w-md">
-            <Image src={watermelon} alt="watermelon logo" />
-            {/* <p className="pt-5">
-              Highly skilled, professional, polyglot Software Developer. I am
-              passionate about solving problems through Technology and building
-              cool things 😛 for the Human Race.
-            </p> */}
-            <h1 className="text-8xl font-extrabold font-heading">Eddie P</h1>
+            <div className="z-0">
+              <Image src={watermelon} alt="watermelon logo" />
+            </div>
+            <h1 className="text-8xl font-extrabold font-heading absolute -my-20 mx-20 -z-10">
+              Eddie P
+            </h1>
             <h2 className="font-extrabold text-2xl font-body italic mt-4">
               Full-Stack Engineer
             </h2>
