@@ -15,6 +15,10 @@ module.exports = {
       colors: {
         purple: "#6F38C5",
       },
+      fontFamily: {
+        heading: ["Scada"],
+        body: ["Holtwood One SC", "serif"],
+      },
     },
   },
   plugins: [require("daisyui")],

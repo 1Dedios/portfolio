@@ -21,17 +21,19 @@ export default function HeroSection() {
               passionate about solving problems through Technology and building
               cool things 😛 for the Human Race.
             </p> */}
-            <h1 className="text-5xl font-bold">Eddie P</h1>
-            <h2 className="font-bold italic mt-4">Full-Stack Engineer</h2>
+            <h1 className="text-8xl font-extrabold font-heading">Eddie P</h1>
+            <h2 className="font-extrabold text-2xl font-body italic mt-4">
+              Full-Stack Engineer
+            </h2>
             <Button
               className={
-                "bg-purple p-2 rounded-md border-2 border-rose-500 mt-2"
+                "bg-purple p-2 rounded-md border-2 border-rose-500 mt-2 font-body"
               }
               text={buttonText}
             />
           </div>
           <span className="chat chat-start text-center w-64 h-40 -mx-20">
-            <div className="chat-bubble chat-bubble-warning shadow-md shadow-slate-200">
+            <div className="chat-bubble chat-bubble-warning shadow-md shadow-slate-200 font-body">
               Highly skilled, professional, polyglot Software Developer. I am
               passionate about solving problems through Technology and building
               cool things 😛 for the Human Race.
