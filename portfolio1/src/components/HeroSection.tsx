@@ -32,8 +32,8 @@ export default function HeroSection() {
               text={buttonText}
             />
           </div>
-          <span className="chat chat-start text-center w-64 h-40 -mx-20">
-            <div className="chat-bubble chat-bubble-warning shadow-md shadow-slate-200 font-body">
+          <span className="chat chat-end text-center w-64 h-40 inline-block absolute top-40 bottom-15 left-20 mx-40 my-40">
+            <div className="chat-bubble chat-bubble-warning shadow-md shadow-slate-200 font-body ">
               Highly skilled, professional, polyglot Software Developer. I am
               passionate about solving problems through Technology and building
               cool things 😛 for the Human Race.
