@@ -26,7 +26,7 @@ export default function HeroSection() {
             </h2>
             <Button
               className={
-                "bg-purple p-2 rounded-md border-2 border-rose-500 mt-2 font-body"
+                "bg-purple p-2 rounded-md border-2 border-rose-500 mt-2 font-sans"
               }
               text={buttonText}
             />
