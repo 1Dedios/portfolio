@@ -22,7 +22,7 @@ export default function HeroSection() {
               Eddie P
             </h1>
             <h2 className="font-extrabold text-2xl font-subs italic mt-4">
-              Full-Stack Engineer
+              Software Engineer & Web Master
             </h2>
             <Button
               className={
