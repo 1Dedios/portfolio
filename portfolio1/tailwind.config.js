@@ -16,7 +16,7 @@ module.exports = {
         purple: "#6F38C5",
       },
       fontFamily: {
-        heading: ["Scada"],
+        megalord: ["camaroon_megalord", "mono"],
         body: ["Holtwood One SC", "serif"],
       },
     },
