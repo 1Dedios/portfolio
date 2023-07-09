@@ -10,7 +10,7 @@ export default function ProjectSection() {
   let buttonText = "👀 More";
 
   return (
-    <div className="min-h-full h-full px-20 py-8">
+    <div className="min-h-screen h-full px-20 py-8">
       <h1 className="text-6xl text-center font-subs font-extrabold italic pb-10">
         Projects
       </h1>
