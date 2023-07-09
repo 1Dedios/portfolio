@@ -14,7 +14,10 @@ export default function ProjectSection() {
       <h1 className="text-6xl text-center font-subs font-extrabold italic pb-10">
         Projects
       </h1>
-      <Button text={buttonText} className={"align-middle"} />
+      <div className="flex flex-col items-center justify-center pb-4">
+        <Button text={buttonText} className={"bg-purple p-2 rounded-full"} />
+      </div>
+
       <div className="flex flex-row space-x-4 justify-evenly">
         <Card
           image={logo}
