@@ -9,14 +9,32 @@ export default function ProjectSection() {
 
   return (
     <div className="min-h-full h-fit px-4 py-8">
-      <h1 className="text-center font-subs font-extrabold italic">Projects</h1>
-      <Card
-        image={logo}
-        alt={firstCardAltText}
-        cardText={firstCardText}
-        cardTitle={firstCardTitle}
-        buttonText={firstButtonText}
-      />
+      <h1 className="text-6xl text-center font-subs font-extrabold italic pb-10">
+        Projects
+      </h1>
+      <div className="flex flex-row space-x-4">
+        <Card
+          image={logo}
+          alt={firstCardAltText}
+          cardText={firstCardText}
+          cardTitle={firstCardTitle}
+          buttonText={firstButtonText}
+        />
+        <Card
+          image={logo}
+          alt={firstCardAltText}
+          cardText={firstCardText}
+          cardTitle={firstCardTitle}
+          buttonText={firstButtonText}
+        />
+        <Card
+          image={logo}
+          alt={firstCardAltText}
+          cardText={firstCardText}
+          cardTitle={firstCardTitle}
+          buttonText={firstButtonText}
+        />
+      </div>
     </div>
   );
 }
