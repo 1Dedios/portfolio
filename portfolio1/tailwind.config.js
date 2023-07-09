@@ -17,7 +17,7 @@ module.exports = {
       },
       fontFamily: {
         megalord: ["camaroon_megalord", "mono"],
-        body: ["Holtwood One SC", "serif"],
+        subs: ["Holtwood One SC", "serif"],
       },
     },
   },
