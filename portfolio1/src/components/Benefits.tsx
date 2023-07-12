@@ -1,9 +1,7 @@
 export default function Benefits() {
   return (
     <div className="bg-white h-64">
-      <h1 className="text-black text-center pt-4">
-        Benefits of Working with me
-      </h1>
+      <h1 className="text-black text-center pt-4">Benefits of My Work</h1>
       <div className="divider"></div>
       <div className="flex flex-row space-x-4">
         <div>
@@ -36,7 +34,12 @@ export default function Benefits() {
           <h3 className="text-black">
             effective collaborator and communicator
           </h3>
-          <p className="text-black">collaboration and </p>
+          <p className="text-black">
+            The value of collaboration and communication cannot be understated.
+            I value it so much that I lead a group of CS degree holding devs and
+            some self taught engineers in bi weekly hackathons to produce MVP
+            for creative ideas that are voted on by the Hack Weekly community.
+          </p>
         </div>
       </div>
     </div>
