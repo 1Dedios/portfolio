@@ -1,30 +1,26 @@
 import Card from "@/components/Card";
+import logo from "../../public/logo.png";
 
 export default function Benefits() {
+  let cardTitle: string = "Technically Proficient";
+  let altText: string = "yerr";
+  let cardText: string =
+    "as a self taught dev I have not ignored the importance of a strong foundation. thus I've immersed myself in Computer Science fundamentals, concepts and processes. this has helped me become a more knowledgable Software Engineer because I understand the underlying structure for running software and why optimizing that foundation only makes for better software";
+  let buttonText: string = "testing";
+
   return (
     <div className="bg-white h-80">
       <h1 className="text-black text-center pt-4">Benefits of My Work</h1>
       <div className="divider"></div>
-      <Card
-        image={"../../public/logo.png"}
-        width={200}
-        cardTitle={"yerr"}
-        alt={"text"}
-        cardText={"testing"}
-        buttonText={"testing"}
-      />
       <div className="flex flex-row space-x-4">
         <div>
-          {/* icon */}
-          <h3 className="text-black text-center">Technically Proficient</h3>
-          <p className="text-black text-center">
-            as a self taught dev I have not ignored the importance of a strong
-            foundation. thus I've immersed myself in Computer Science
-            fundamentals, concepts and processes. this has helped me become a
-            more knowledgable Software Engineer because I understand the
-            underlying structure for running software and why optimizing that
-            foundation only makes for better software.
-          </p>
+          <Card
+            image={logo}
+            cardTitle={cardTitle}
+            alt={altText}
+            cardText={cardText}
+            buttonText={buttonText}
+          />
         </div>
         <div>
           {/* icon */}
