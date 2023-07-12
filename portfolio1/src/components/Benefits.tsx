@@ -1,8 +1,18 @@
+import Card from "@/components/Card";
+
 export default function Benefits() {
   return (
     <div className="bg-white h-80">
       <h1 className="text-black text-center pt-4">Benefits of My Work</h1>
       <div className="divider"></div>
+      <Card
+        image={"../../public/logo.png"}
+        width={200}
+        cardTitle={"yerr"}
+        alt={"text"}
+        cardText={"testing"}
+        buttonText={"testing"}
+      />
       <div className="flex flex-row space-x-4">
         <div>
           {/* icon */}
