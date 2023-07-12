@@ -1,13 +1,13 @@
 export default function Benefits() {
   return (
-    <div className="bg-white h-64">
+    <div className="bg-white h-80">
       <h1 className="text-black text-center pt-4">Benefits of My Work</h1>
       <div className="divider"></div>
       <div className="flex flex-row space-x-4">
         <div>
           {/* icon */}
-          <h3 className="text-black">Technically Proficient</h3>
-          <p className="text-black">
+          <h3 className="text-black text-center">Technically Proficient</h3>
+          <p className="text-black text-center">
             as a self taught dev I have not ignored the importance of a strong
             foundation. thus I've immersed myself in Computer Science
             fundamentals, concepts and processes. this has helped me become a
@@ -18,8 +18,8 @@ export default function Benefits() {
         </div>
         <div>
           {/* icon */}
-          <h3 className="text-black">Problem Solving Skills</h3>
-          <p className="text-black">
+          <h3 className="text-black text-center">Problem Solving Skills</h3>
+          <p className="text-black text-center">
             Problem? what is that? I only focus on solution or finding them. As
             a software engineer there is either problems that have been solved
             or problems yet to solve. no inbetween. So I seek solutions, whether
@@ -31,10 +31,10 @@ export default function Benefits() {
         </div>
         <div>
           {/* icon */}
-          <h3 className="text-black">
+          <h3 className="text-black text-center">
             effective collaborator and communicator
           </h3>
-          <p className="text-black">
+          <p className="text-black text-center">
             The value of collaboration and communication cannot be understated.
             I value it so much that I lead a group of CS degree holding devs and
             some self taught engineers in bi weekly hackathons to produce MVP

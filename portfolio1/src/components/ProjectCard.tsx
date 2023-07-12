@@ -1,7 +1,13 @@
 import Image from "next/image";
 import Button from "@/components/Button";
 
-export default function Card({ image, alt, cardText, cardTitle, buttonText }) {
+export default function ProjectCard({
+  image,
+  alt,
+  cardText,
+  cardTitle,
+  buttonText,
+}) {
   return (
     <div className="card w-96 glass">
       <figure>

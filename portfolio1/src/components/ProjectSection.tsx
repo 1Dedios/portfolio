@@ -1,4 +1,4 @@
-import Card from "@/components/Card";
+import ProjectCard from "@/components/ProjectCard";
 import logo from "/public/logo.png";
 import Button from "@/components/Button";
 
@@ -19,21 +19,21 @@ export default function ProjectSection() {
       </div>
 
       <div className="flex flex-row space-x-4 justify-evenly">
-        <Card
+        <ProjectCard
           image={logo}
           alt={firstCardAltText}
           cardText={firstCardText}
           cardTitle={firstCardTitle}
           buttonText={firstButtonText}
         />
-        <Card
+        <ProjectCard
           image={logo}
           alt={firstCardAltText}
           cardText={firstCardText}
           cardTitle={firstCardTitle}
           buttonText={firstButtonText}
         />
-        <Card
+        <ProjectCard
           image={logo}
           alt={firstCardAltText}
           cardText={firstCardText}
