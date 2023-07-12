@@ -1,17 +1,23 @@
 import Image from "next/image";
-import Button from "@/components/Button";
 
-export default function Card({ image, alt, cardText, cardTitle, buttonText }) {
+interface text {
+  cardTitle: string;
+  cardText: string;
+  alt: string;
+}
+
+export default function Card({ image }, { alt, cardText, cardTitle }: text) {
   return (
     <div className="card w-96">
       <figure>
         <Image src={image} alt={alt} />
       </figure>
-      <div className="card-body">
+      <div className="card-front">
         <h2>{cardTitle}</h2>
-        <p>{cardText}</p>
-        <div className="card-actions justify-end">
-          <Button text={buttonText} className="btn-primary" />
+      </div>
+      <div className="card-back">
+        <div className="card-body">
+          <p>{cardText}</p>
         </div>
       </div>
     </div>
