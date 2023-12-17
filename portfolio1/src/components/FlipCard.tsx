@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Button from '@/components/Button';
 
+// TODO: Add this component to the "recent project" section and see how it looks before styling it to see the structure - remember to add the logos of the projects as the images
+
 export default function FlipCard({
   title,
   subTitle,
