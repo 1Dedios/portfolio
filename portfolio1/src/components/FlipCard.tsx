@@ -31,6 +31,8 @@ export default function FlipCard({
               </div>
               <div className="flip_card_body">
                 <p>{shortDescription}</p>
+                {/* TODO: this button will take you to that specifc projects page */}
+                <Button text={text} />
               </div>
             </div>
           </div>
