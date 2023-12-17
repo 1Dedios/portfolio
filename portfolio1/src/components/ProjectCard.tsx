@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Button from "@/components/Button";
+import Image from 'next/image';
+import Button from '@/components/Button';
 
 export default function ProjectCard({
   image,
@@ -7,6 +7,7 @@ export default function ProjectCard({
   cardText,
   cardTitle,
   buttonText,
+  webDesignation,
 }) {
   return (
     <div className="card w-96 glass">
@@ -16,6 +17,7 @@ export default function ProjectCard({
       <div className="card-body">
         <h2>{cardTitle}</h2>
         <p>{cardText}</p>
+        <p>{webDesignation}</p>
         <div className="card-actions justify-end">
           <Button text={buttonText} className="btn-primary" />
         </div>
