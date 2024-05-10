@@ -15,7 +15,7 @@ export default function ProjectSection() {
   return (
     <div className="min-h-screen h-full px-20 py-8">
       <h1 className="text-6xl text-center font-subs font-extrabold italic pb-10">
-        Recent Projects
+        Projects
       </h1>
       <div className="flex flex-col items-center justify-center pb-4">
         <Button text={buttonText} className={'bg-purple p-2 rounded-full'} />
@@ -45,6 +45,19 @@ export default function ProjectSection() {
           cardTitle={firstCardTitle}
           buttonText={firstButtonText}
           webDesignation={webDesignation}
+        />
+        <Flipcard
+          title="test"
+          subTitle="test"
+          imgSrc={logo}
+          imgAlt="logo"
+          imgWidth={flipFirstCardHeight}
+          imgHeight={flipFirstCardHeight}
+          typeDesignation="test"
+          shortDescription="test"
+          classname="class"
+          buttonText="button"
+          buttonClassName="button"
         />
       </div>
     </div>
