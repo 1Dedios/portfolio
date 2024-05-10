@@ -8,6 +8,13 @@ export default function ProjectCard({
   cardTitle,
   buttonText,
   webDesignation,
+}: {
+  image: any;
+  alt: string;
+  cardText: string;
+  cardTitle: string;
+  buttonText: string;
+  webDesignation: string;
 }) {
   return (
     <div className="card w-96 glass">

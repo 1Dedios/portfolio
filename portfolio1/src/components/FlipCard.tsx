@@ -3,6 +3,8 @@ import Button from '@/components/Button';
 
 // TODO: Add this component to the "recent project" section and see how it looks before styling it to see the structure - remember to add the logos of the projects as the images
 
+let test = 'test';
+
 export default function FlipCard({
   title,
   subTitle,
@@ -47,7 +49,7 @@ export default function FlipCard({
               <div className="flip_card_body">
                 <p>{shortDescription}</p>
                 {/* TODO: this button will take you to that specific projects page */}
-                <Button text="button" />
+                <Button text="button" className={test} />
               </div>
             </div>
           </div>
