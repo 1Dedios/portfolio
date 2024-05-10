@@ -8,8 +8,21 @@ export default function FlipCard({
   subTitle,
   image,
   alt,
+  width,
+  height,
   typeDesignation,
+  classname,
   shortDescription,
+}: {
+  title: string;
+  subTitle: string;
+  image: any;
+  alt: string;
+  width: number;
+  height: number;
+  typeDesignation: string;
+  classname: string;
+  shortDescription: string;
 }) {
   return (
     <>
@@ -18,9 +31,9 @@ export default function FlipCard({
           <div className="flip_card_face_front">
             <h2>{title}</h2>
             {/* TODO: typeDesignation = Site or App. Represent as a pill shaped badge "button" with Site or App - aligned to the right of the card*/}
-            <Button text={typeDesignation} />
+            <Button text={typeDesignation} className={classname} />
             {/* TODO: images should be of the logos for these sites/apps */}
-            <Image src={image} alt={alt} />
+            <Image src={image} alt={alt} width={width} height={height} />
             <p>{subTitle}</p>
           </div>
           <div className="flip_card_face_back">
@@ -33,8 +46,8 @@ export default function FlipCard({
               </div>
               <div className="flip_card_body">
                 <p>{shortDescription}</p>
-                {/* TODO: this button will take you to that specifc projects page */}
-                <Button text={text} />
+                {/* TODO: this button will take you to that specific projects page */}
+                <Button text="button" />
               </div>
             </div>
           </div>

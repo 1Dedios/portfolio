@@ -1,6 +1,7 @@
 import ProjectCard from '@/components/ProjectCard';
 import logo from '/public/logo.png';
 import Button from '@/components/Button';
+import Flipcard from '../components/FlipCard';
 
 export default function ProjectSection() {
   let firstCardAltText = 'random';
@@ -9,6 +10,7 @@ export default function ProjectSection() {
   let firstButtonText = 'More';
   let buttonText = '👀 All Projects';
   let webDesignation = 'web app or web site';
+  let flipFirstCardHeight = 200;
 
   return (
     <div className="min-h-screen h-full px-20 py-8">
