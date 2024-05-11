@@ -27,12 +27,18 @@ export default function FlipCard({
   buttonText: string;
   buttonClassName: string;
 }) {
+  const cardFlip = () => {
+    // TODO: set state here for flip
+  };
+
   return (
     <>
       {/* DaisyUI Attributes: card w-96 glass - everything else is JS*/}
-      <div className={`card w-96 glass ${styles.flip_card}`}>
-        <div className="flip_card_inner">
-          <div className="flip_card_face flip_card_face_front">
+      <div onClick={cardFlip} className={`glass ${styles.flip_card}`}>
+        <div className={styles.flip_card_inner}>
+          <div
+            className={`${styles.flip_card_face} ${styles.flip_card_face_front}`}
+          >
             <h2>{title}</h2>
             {/* TODO: typeDesignation = Site or App. Represent as a pill shaped badge "button" with Site or App - aligned to the right of the card*/}
             <Button text={typeDesignation} className={classname} />
@@ -45,9 +51,9 @@ export default function FlipCard({
             />
             <p>{subTitle}</p>
           </div>
-          <div className="flip_card_face flip_card_face_back">
-            <div className="flip_card_content">
-              <div className="flip_card_header">
+          <div className={`${styles.flip_card_face} ${styles.flip_card_back}`}>
+            <div className={`${styles.flip_card_content}`}>
+              <div className={`${styles.flip_card_header}`}>
                 <h2>{title}</h2>
                 {/* TODO: This will show the tech stack used to build the project as icons */}
                 <Image
@@ -58,7 +64,7 @@ export default function FlipCard({
                 />
                 <span>Tech Stack:</span>
               </div>
-              <div className="flip_card_body">
+              <div className={styles.flip_card_body}>
                 <p>{shortDescription}</p>
                 {/* TODO: this button will take you to that specific projects page */}
                 <Button text={buttonText} className={buttonClassName} />
