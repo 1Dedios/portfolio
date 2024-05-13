@@ -1,68 +1,84 @@
 import Image from 'next/image';
 import Button from '@/components/Button';
 import styles from './FlipCard.module.css';
+import { useState } from 'react';
 
 export default function FlipCard({
-  title,
+  mainTitle,
+  backTitle,
   subTitle,
-  imgSrc,
-  imgAlt,
-  imgWidth,
-  imgHeight,
+  imgFrontSrc,
+  imgFrontAlt,
+  imgFrontWidth,
+  imgFrontHeight,
   typeDesignation,
   classname,
   shortDescription,
   buttonText,
   buttonClassName,
 }: {
-  title: string;
+  mainTitle: string;
+  backTitle: string;
   subTitle: string;
-  imgSrc: any;
-  imgAlt: string;
-  imgWidth: number;
-  imgHeight: number;
+  imgFrontSrc: any;
+  imgFrontAlt: string;
+  imgFrontWidth: number;
+  imgFrontHeight: number;
   typeDesignation: string;
   classname: string;
   shortDescription: string;
   buttonText: string;
   buttonClassName: string;
 }) {
+  const [isFlipped, setIsFlipped] = useState(false);
+  console.log(isFlipped);
+
   const cardFlip = () => {
-    // TODO: set state here for flip
+    if (!isFlipped) {
+      setIsFlipped(true);
+    } else {
+      setIsFlipped(false);
+    }
+  };
+
+  const flipStyle = {
+    transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(360deg)',
   };
 
   return (
     <>
       {/* DaisyUI Attributes: card w-96 glass - everything else is JS*/}
-      <div onClick={cardFlip} className={`glass ${styles.flip_card}`}>
-        <div className={styles.flip_card_inner}>
+      <div className={`${styles.flip_card}`}>
+        <div
+          className={styles.flip_card_inner}
+          style={flipStyle}
+          onClick={cardFlip}
+        >
           <div
             className={`${styles.flip_card_face} ${styles.flip_card_face_front}`}
           >
-            <h2>{title}</h2>
+            <h2>{mainTitle}</h2>
             {/* TODO: typeDesignation = Site or App. Represent as a pill shaped badge "button" with Site or App - aligned to the right of the card*/}
             <Button text={typeDesignation} className={classname} />
-            {/* TODO: images should be of the logos for these sites/apps */}
-            <Image
-              src={imgSrc}
-              alt={imgAlt}
-              width={imgWidth}
-              height={imgHeight}
-            />
+
             <p>{subTitle}</p>
           </div>
-          <div className={`${styles.flip_card_face} ${styles.flip_card_back}`}>
+          <div
+            className={`${styles.flip_card_face} ${styles.flip_card_face_back}`}
+          >
             <div className={`${styles.flip_card_content}`}>
               <div className={`${styles.flip_card_header}`}>
-                <h2>{title}</h2>
+                <h2>{backTitle}</h2>
                 {/* TODO: This will show the tech stack used to build the project as icons */}
-                <Image
-                  src={imgSrc}
-                  alt={imgAlt}
-                  width={imgWidth}
-                  height={imgHeight}
-                />
+
                 <span>Tech Stack:</span>
+                {/* TODO: images should be of the logos for these sites/apps */}
+                <Image
+                  src={imgFrontSrc}
+                  alt={imgFrontAlt}
+                  width={imgFrontWidth}
+                  height={imgFrontHeight}
+                />
               </div>
               <div className={styles.flip_card_body}>
                 <p>{shortDescription}</p>

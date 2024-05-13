@@ -1,5 +1,6 @@
 import ProjectCard from '@/components/ProjectCard';
 import logo from '/public/logo.png';
+import dedios from '/public/next.svg';
 import Button from '@/components/Button';
 import Flipcard from '../components/FlipCard';
 
@@ -47,14 +48,15 @@ export default function ProjectSection() {
           webDesignation={webDesignation}
         />
         <Flipcard
-          title="test"
-          subTitle="test"
-          imgSrc={logo}
-          imgAlt="logo"
-          imgWidth={flipFirstCardHeight}
-          imgHeight={flipFirstCardHeight}
+          mainTitle="FRONT"
+          backTitle="BACK BACK BACK BACK"
+          subTitle="SUBTITLE"
+          imgFrontSrc={logo}
+          imgFrontAlt="logo"
+          imgFrontWidth={flipFirstCardHeight}
+          imgFrontHeight={flipFirstCardHeight}
           typeDesignation="test"
-          shortDescription="test"
+          shortDescription="SHORT DESCRIPTION"
           classname="class"
           buttonText="button"
           buttonClassName="button"

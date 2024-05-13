@@ -43,7 +43,7 @@
 }
 
 .flip_card_face_back {
-  background-color: var(--light);
+  background-color: var(--foreground-rgb);
   transform: rotateY(180deg);
 }
 
