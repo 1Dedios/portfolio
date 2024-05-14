@@ -1,6 +1,6 @@
 export default function Benefits() {
   return (
-    <div className="bg-white h-80">
+    <div className="bg-gold h-80">
       <h1 className="text-black text-center pt-4">BENEFITS OF MY WORK</h1>
       <div className="divider"></div>
       <div className="flex flex-row space-x-4">
