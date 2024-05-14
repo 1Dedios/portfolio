@@ -21,7 +21,8 @@ module.exports = {
         creme: '#FFFAE6',
       },
       fontFamily: {
-        nosifer: ['var(--font-nosifer)'],
+        nosifer: 'var(--font-nosifer)',
+        poppins: 'var(--font-poppins)',
       },
     },
   },

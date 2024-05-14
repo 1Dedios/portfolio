@@ -1,13 +1,6 @@
 import Button from '@/components/Button';
 import Image from 'next/image';
 import watermelon from '/public/watermelon_me_bitmoji.png';
-import { Nosifer } from 'next/font/google';
-
-const nosifer = Nosifer({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-nosifer',
-});
 
 export default function HeroSection() {
   let buttonText = '... learn more';
@@ -25,10 +18,12 @@ export default function HeroSection() {
             <div className="z-0">
               <Image src={watermelon} alt="watermelon logo" />
             </div>
-            <h1 className="text-8xl font-extrabold font-nosifer absolute -my-20 mx-20 -z-10">
+            <h1
+              className={`font-nosifer text-8xl font-extrabold absolute -my-20 mx-20 -z-10`}
+            >
               Eddie P
             </h1>
-            <h2 className="font-extrabold text-2xl font-nosifer italic mt-4">
+            <h2 className={`font-poppins font-extrabold text-2xl italic mt-4`}>
               Software Engineer & Web Master
             </h2>
             <Button
