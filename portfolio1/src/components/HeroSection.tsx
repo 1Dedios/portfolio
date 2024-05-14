@@ -18,10 +18,10 @@ export default function HeroSection() {
             <div className="z-0">
               <Image src={watermelon} alt="watermelon logo" />
             </div>
-            <h1 className="text-8xl font-extrabold font-megalord absolute -my-20 mx-20 -z-10">
+            <h1 className="text-8xl font-extrabold font-nosifer absolute -my-20 mx-20 -z-10">
               Eddie P
             </h1>
-            <h2 className="font-extrabold text-2xl font-subs italic mt-4">
+            <h2 className="font-extrabold text-2xl font-megalord italic mt-4">
               Software Engineer & Web Master
             </h2>
             <Button
