@@ -7,7 +7,7 @@ import { UilEnvelopeMinus } from '@iconscout/react-unicons';
 export default function Footer() {
   return (
     <>
-      <div className="footer footer-center p-10 bg-creme text-neutral-100">
+      <div className="footer footer-center p-10 bg-creme text-navy">
         <div>
           <Image src={logo} alt="Watermelon Me" width={250} height={100} />
 
