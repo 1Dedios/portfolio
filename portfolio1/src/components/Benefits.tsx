@@ -1,7 +1,7 @@
 export default function Benefits() {
   return (
     <div className="bg-gold h-80">
-      <h1 className="text-navy text-center pt-4 font-nosifer">
+      <h1 className="text-navy text-center pt-4 font-megalord">
         BENEFITS OF MY WORK
       </h1>
       <div className="divider"></div>

@@ -1,16 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Scada:ital,wght@1,700&family=Taviraj&display=swap');
-
-@font-face {
-  font-family: 'camaroon_megalord';
-  src: url(../../public/fonts/camaroon_megalord.otf);
-  font-family: 'nosifer-font';
-  src: url('../../public/fonts/nosifer-font.ttf');
-  font-family: 'Holtwood One SC';
-  src: url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Scada:ital,wght@1,700&family=Taviraj&display=swap');
-}
 
 /* Light mode is default */
 :root {

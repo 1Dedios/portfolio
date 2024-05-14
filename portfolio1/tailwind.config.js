@@ -23,7 +23,7 @@ module.exports = {
       fontFamily: {
         megalord: ['camaroon_megalord', 'mono'],
         subs: ['Holtwood One SC', 'serif'],
-        nosifer: ['nosifer-font', 'mono'],
+        nosifer: ['var(--font-nosifer)'],
       },
     },
   },

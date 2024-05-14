@@ -1,16 +1,21 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
-import Footer from "@/components/Footer";
-import ProjectSection from "@/components/ProjectSection";
-import Benefits from "@/components/Benefits";
+import Navbar from '@/components/Navbar';
+import HeroSection from '@/components/HeroSection';
+import ProjectSection from '@/components/ProjectSection';
+import Benefits from '@/components/Benefits';
+import Footer from '@/components/Footer';
+// FONTS
+import { Nosifer } from 'next/font/google';
 
-const inter = Inter({ subsets: ["latin"] });
+export const nosifer = Nosifer({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: '400',
+  variable: '--font-nosifer',
+});
 
 export default function Home() {
   return (
-    <main className={`${inter.className}`}>
+    <main className={`${nosifer.variable}`}>
       <div>
         <Navbar />
         <HeroSection />
