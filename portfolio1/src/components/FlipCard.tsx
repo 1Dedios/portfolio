@@ -11,7 +11,7 @@ export default function FlipCard({
   imgFrontAlt,
   imgFrontWidth,
   imgFrontHeight,
-  typeDesignation,
+  projectType,
   classname,
   shortDescription,
   buttonText,
@@ -24,7 +24,7 @@ export default function FlipCard({
   imgFrontAlt: string;
   imgFrontWidth: number;
   imgFrontHeight: number;
-  typeDesignation: string;
+  projectType: string;
   classname: string;
   shortDescription: string;
   buttonText: string;
@@ -47,7 +47,6 @@ export default function FlipCard({
 
   return (
     <>
-      {/* DaisyUI Attributes: card w-96 glass - everything else is JS*/}
       <div className={`${styles.flip_card}`}>
         <div
           className={styles.flip_card_inner}
@@ -55,13 +54,13 @@ export default function FlipCard({
           onClick={cardFlip}
         >
           <div
-            className={`${styles.flip_card_face} ${styles.flip_card_face_front}`}
+            className={`flex flex-col ${styles.flip_card_face} ${styles.flip_card_face_front}`}
           >
-            <h2>{mainTitle}</h2>
+            <div>{mainTitle}</div>
             {/* TODO: typeDesignation = Site or App. Represent as a pill shaped badge "button" with Site or App - aligned to the right of the card*/}
-            <Button text={typeDesignation} className={classname} />
+            <Button text={projectType} className={classname} />
 
-            <p>{subTitle}</p>
+            <div>{subTitle}</div>
           </div>
           <div
             className={`${styles.flip_card_face} ${styles.flip_card_face_back}`}
@@ -71,8 +70,9 @@ export default function FlipCard({
                 <h2>{backTitle}</h2>
                 {/* TODO: This will show the tech stack used to build the project as icons */}
 
-                <span>Tech Stack:</span>
                 {/* TODO: images should be of the logos for these sites/apps */}
+              </div>
+              <div className="flex justify-center">
                 <Image
                   src={imgFrontSrc}
                   alt={imgFrontAlt}
@@ -80,7 +80,9 @@ export default function FlipCard({
                   height={imgFrontHeight}
                 />
               </div>
+
               <div className={styles.flip_card_body}>
+                <span>Tech Stack: React, NextJS</span>
                 <p>{shortDescription}</p>
                 {/* TODO: this button will take you to that specific projects page */}
                 <Button text={buttonText} className={buttonClassName} />

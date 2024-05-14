@@ -14,9 +14,9 @@
   position: relative;
 }
 
-.flip_card_inner.is-flipped {
+/* .flip_card_inner.is-flipped {
   transform: rotateY(180deg);
-}
+} */
 
 .flip_card_face {
   position: absolute;
@@ -40,10 +40,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  justify-items: center;
 }
 
 .flip_card_face_back {
-  background-color: var(--foreground-rgb);
+  background-color: var(--primary);
   transform: rotateY(180deg);
 }
 
@@ -55,6 +56,12 @@
 .flip_card_header {
   position: relative;
   padding: 30px 30px 40px;
+  display: flex;
+  /* align-items: center; */
+  align-content: center;
+  /* justify-content: center; */
+  /* justify-items: center; */
+  /* justify-self: center; */
 }
 
 .flip_card_header:after {

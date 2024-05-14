@@ -55,7 +55,7 @@ export default function ProjectSection() {
           imgFrontAlt="logo"
           imgFrontWidth={flipFirstCardHeight}
           imgFrontHeight={flipFirstCardHeight}
-          typeDesignation="test"
+          projectType="project type"
           shortDescription="SHORT DESCRIPTION"
           classname="class"
           buttonText="button"
