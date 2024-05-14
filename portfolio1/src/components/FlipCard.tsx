@@ -80,12 +80,11 @@ export default function FlipCard({
                   height={imgFrontHeight}
                 />
               </div>
-
               <div className={styles.flip_card_body}>
                 <span>Tech Stack: React, NextJS</span>
                 <p>{shortDescription}</p>
                 {/* TODO: this button will take you to that specific projects page */}
-                <Button text={buttonText} className={buttonClassName} />
+                <Button text={buttonText} className="mt-12" />
               </div>
             </div>
           </div>

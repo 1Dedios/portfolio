@@ -23,29 +23,47 @@ export default function ProjectSection() {
       </div>
 
       <div className="flex flex-row space-x-4 justify-evenly">
-        <ProjectCard
-          image={logo}
-          alt={firstCardAltText}
-          cardText={firstCardText}
-          cardTitle={firstCardTitle}
-          buttonText={firstButtonText}
-          webDesignation={webDesignation}
+        <Flipcard
+          mainTitle="FRONT"
+          backTitle="BACK BACK BACK BACK"
+          subTitle="SUBTITLE"
+          imgFrontSrc={logo}
+          imgFrontAlt="logo"
+          imgFrontWidth={flipFirstCardHeight}
+          imgFrontHeight={flipFirstCardHeight}
+          projectType="project type"
+          shortDescription="SHORT DESCRIPTION"
+          classname="class"
+          buttonText="button"
+          buttonClassName="button"
         />
-        <ProjectCard
-          image={logo}
-          alt={firstCardAltText}
-          cardText={firstCardText}
-          cardTitle={firstCardTitle}
-          buttonText={firstButtonText}
-          webDesignation={webDesignation}
+        <Flipcard
+          mainTitle="FRONT"
+          backTitle="BACK BACK BACK BACK"
+          subTitle="SUBTITLE"
+          imgFrontSrc={logo}
+          imgFrontAlt="logo"
+          imgFrontWidth={flipFirstCardHeight}
+          imgFrontHeight={flipFirstCardHeight}
+          projectType="project type"
+          shortDescription="SHORT DESCRIPTION"
+          classname="class"
+          buttonText="button"
+          buttonClassName="button"
         />
-        <ProjectCard
-          image={logo}
-          alt={firstCardAltText}
-          cardText={firstCardText}
-          cardTitle={firstCardTitle}
-          buttonText={firstButtonText}
-          webDesignation={webDesignation}
+        <Flipcard
+          mainTitle="FRONT"
+          backTitle="BACK BACK BACK BACK"
+          subTitle="SUBTITLE"
+          imgFrontSrc={logo}
+          imgFrontAlt="logo"
+          imgFrontWidth={flipFirstCardHeight}
+          imgFrontHeight={flipFirstCardHeight}
+          projectType="project type"
+          shortDescription="SHORT DESCRIPTION"
+          classname="class"
+          buttonText="button"
+          buttonClassName="button"
         />
         <Flipcard
           mainTitle="FRONT"
