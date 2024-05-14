@@ -21,8 +21,6 @@ module.exports = {
         creme: '#FFFAE6',
       },
       fontFamily: {
-        megalord: ['camaroon_megalord', 'mono'],
-        subs: ['Holtwood One SC', 'serif'],
         nosifer: ['var(--font-nosifer)'],
       },
     },
