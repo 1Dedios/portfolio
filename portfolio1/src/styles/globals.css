@@ -5,7 +5,9 @@
 
 @font-face {
   font-family: 'camaroon_megalord';
-  src: url('../../public/camaroon_megalord.otf');
+  src: url(../../public/fonts/camaroon_megalord.otf);
+  font-family: 'nosifer-font';
+  src: url('../../public/fonts/nosifer-font.ttf');
 }
 
 /* Light mode is default */

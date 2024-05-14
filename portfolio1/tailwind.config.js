@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -22,6 +21,7 @@ module.exports = {
       fontFamily: {
         megalord: ['camaroon_megalord', 'mono'],
         subs: ['Holtwood One SC', 'serif'],
+        nosifer: ['nosifer-font', 'mono'],
       },
     },
   },
