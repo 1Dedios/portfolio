@@ -1,8 +1,8 @@
-import Image from "next/image";
-import Logo from "/public/logo.png";
-import { UilGithub } from "@iconscout/react-unicons";
-import { UilLinkedin } from "@iconscout/react-unicons";
-import { UilEnvelopeMinus } from "@iconscout/react-unicons";
+import Image from 'next/image';
+import Logo from '/public/logo.png';
+import { UilGithub } from '@iconscout/react-unicons';
+import { UilLinkedin } from '@iconscout/react-unicons';
+import { UilEnvelopeMinus } from '@iconscout/react-unicons';
 
 export default function Navbar() {
   return (
@@ -30,19 +30,31 @@ export default function Navbar() {
             className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Homepage</a>
-            </li>
-            <li>
-              <a>Projects</a>
+              <a>Home</a>
             </li>
             <li>
               <a>About</a>
             </li>
             <li>
-              <a>Blog</a>
+              <a>Software Portfolio</a>
+            </li>
+            <li>
+              <a>Network Portfolio</a>
+            </li>
+            <li>
+              <a>CyberSec Portfolio</a>
             </li>
             <li>
               <a>Open Source</a>
+            </li>
+            <li>
+              <a>Blog</a>
+            </li>
+            <li>
+              <a>Resume</a>
+            </li>
+            <li>
+              <a>Contact</a>
             </li>
           </ul>
         </div>
@@ -54,12 +66,12 @@ export default function Navbar() {
       </div>
       <div className="navbar-end gap-4">
         <a>
-          {" "}
-          <UilLinkedin />{" "}
+          {' '}
+          <UilLinkedin />{' '}
         </a>
         <a>
-          {" "}
-          <UilGithub />{" "}
+          {' '}
+          <UilGithub />{' '}
         </a>
         <UilEnvelopeMinus />
       </div>

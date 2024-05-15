@@ -10,7 +10,7 @@ export default function ProjectSection() {
       <h1 className="text-6xl text-center font-poppins pb-10">PROJECTS</h1>
       <div className="flex flex-col items-center justify-center pb-4">
         <Button
-          text="👀 All Projects"
+          text="👀 Portfolio"
           className={'bg-gold p-3 rounded-full text-navy'}
         />
       </div>
