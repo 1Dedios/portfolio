@@ -12,7 +12,7 @@ export default function Footer() {
           <Image src={logo} alt="Watermelon Me" width={250} height={100} />
 
           <p className="font-sans">
-            Copyright © 2022-2023 - Created w/ ❤️ Eddie Padilla
+            Copyright © 2022-2024 - Created w/ ❤️ Eddie Padilla
           </p>
         </div>
         <div>
