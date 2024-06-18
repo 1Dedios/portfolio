@@ -2,6 +2,8 @@ import Image from 'next/image';
 import { AttentionSeeker } from 'react-awesome-reveal';
 import watermelon from '/public/watermelon_me_bitmoji.png';
 
+// TODO: import text shuffle component to the sub-header under your name
+
 export default function HeroSection() {
   return (
     <div>
