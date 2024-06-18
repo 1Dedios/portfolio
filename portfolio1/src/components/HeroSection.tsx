@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { AttentionSeeker } from 'react-awesome-reveal';
 import watermelon from '/public/watermelon_me_bitmoji.png';
 
 export default function HeroSection() {
@@ -18,7 +19,7 @@ export default function HeroSection() {
             <h1
               className={`font-nosifer text-9xl font-extrabold absolute -my-20 -mx-20 -z-10 text-creme`}
             >
-              Eddie P
+              <AttentionSeeker effect="tada">Eddie P</AttentionSeeker>
             </h1>
             <h2
               className={`font-poppins font-extrabold text-2xl italic mt-20 pt-5 text-creme`}
