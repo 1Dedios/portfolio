@@ -7,7 +7,9 @@ import { UilEnvelopeMinus } from '@iconscout/react-unicons';
 export default function Navbar() {
   return (
     <div className="navbar bg-purple shadow-lx glass">
+      {/* extreme left elements */}
       <div className="navbar-start">
+        {/* mobile menu */}
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
             <svg
@@ -30,22 +32,10 @@ export default function Navbar() {
             className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Home</a>
+              <a>Software</a>
             </li>
             <li>
-              <a>About</a>
-            </li>
-            <li>
-              <a>Software Portfolio</a>
-            </li>
-            <li>
-              <a>Network Portfolio</a>
-            </li>
-            <li>
-              <a>CyberSec Portfolio</a>
-            </li>
-            <li>
-              <a>Open Source</a>
+              <a>CyberSecurity</a>
             </li>
             <li>
               <a>Blog</a>
@@ -56,14 +46,50 @@ export default function Navbar() {
             <li>
               <a>Contact</a>
             </li>
+            <li>
+              <a>About</a>
+            </li>
           </ul>
         </div>
       </div>
-      <div className="navbar-center">
-        <a>
+
+      {/* links to the left of the logo */}
+      <div>
+        <ul className="flex flex-row space-x-8">
+          <li>
+            <a href="">Software</a>
+          </li>
+          <li>
+            <a href="">Cybersecurity</a>
+          </li>
+          <li>
+            <a href="">Blog</a>
+          </li>
+        </ul>
+      </div>
+
+      <div className="navbar-center flex space-x-6">
+        <a href="/">
           <Image src={Logo} alt="logo" width={160} height={160} />
         </a>
       </div>
+
+      {/* links to the right of the logo */}
+      <div>
+        <ul className="flex flex-row space-x-8">
+          <li>
+            <a href="">About</a>
+          </li>
+          <li>
+            <a href="">Resume</a>
+          </li>
+          <li>
+            <a href="">Contact</a>
+          </li>
+        </ul>
+      </div>
+
+      {/* extreme right elements */}
       <div className="navbar-end gap-4">
         <a>
           {' '}
