@@ -6,9 +6,9 @@ import { UilEnvelopeMinus } from '@iconscout/react-unicons';
 
 export default function Navbar() {
   return (
-    <div className="navbar bg-purple shadow-lx glass">
+    <div className="navbar bg-purple shadow-lx glass text-creme">
       {/* extreme left elements */}
-      <div className="navbar-start">
+      <div className="navbar-start mr-4">
         {/* mobile menu */}
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
@@ -56,13 +56,13 @@ export default function Navbar() {
       {/* links to the left of the logo */}
       <div>
         <ul className="flex flex-row space-x-8">
-          <li>
+          <li className="hover:text-gold hover:uppercase">
             <a href="">Software</a>
           </li>
-          <li>
+          <li className="hover:text-gold hover:uppercase">
             <a href="">Cybersecurity</a>
           </li>
-          <li>
+          <li className="hover:text-gold hover:uppercase">
             <a href="">Blog</a>
           </li>
         </ul>
@@ -77,20 +77,20 @@ export default function Navbar() {
       {/* links to the right of the logo */}
       <div>
         <ul className="flex flex-row space-x-8">
-          <li>
+          <li className="hover:text-gold hover:uppercase">
             <a href="">About</a>
           </li>
-          <li>
+          <li className="hover:text-gold hover:uppercase">
             <a href="">Resume</a>
           </li>
-          <li>
+          <li className="hover:text-gold hover:uppercase">
             <a href="">Contact</a>
           </li>
         </ul>
       </div>
 
       {/* extreme right elements */}
-      <div className="navbar-end gap-4">
+      <div className="navbar-end gap-4 mr-4">
         <a>
           {' '}
           <UilLinkedin />{' '}
