@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Head from 'next/head';
 import Logo from '/public/logo.png';
 import { UilGithub } from '@iconscout/react-unicons';
 import { UilLinkedin } from '@iconscout/react-unicons';
@@ -7,11 +8,14 @@ import { UilEnvelopeMinus } from '@iconscout/react-unicons';
 export default function Navbar() {
   return (
     <div className="navbar bg-purple shadow-lx glass text-creme">
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       {/* extreme left elements */}
       <div className="navbar-start mr-4">
         {/* mobile menu */}
         <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost btn-circle">
+          <label tabIndex={0} className="btn btn-ghost btn-circle lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -91,11 +95,11 @@ export default function Navbar() {
 
       {/* extreme right elements */}
       <div className="navbar-end gap-4 mr-4">
-        <a>
+        <a href="https://www.linkedin.com/in/epadilla1/">
           {' '}
           <UilLinkedin />{' '}
         </a>
-        <a>
+        <a href="https://github.com/1Dedios">
           {' '}
           <UilGithub />{' '}
         </a>
