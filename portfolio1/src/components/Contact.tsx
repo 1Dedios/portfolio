@@ -7,6 +7,18 @@ export default function Contact() {
   const [service, setService] = useState('');
   const [about, setAbout] = useState('');
 
+  // TODO: implement the functions - getIsFormValid, clearForm, handleSubmit
+  const getIsFormValid = () => {};
+
+  const clearForm = () => {
+    // i am assuming we add conditionals here for getIsFormValid
+    // it should only clear all of these if the form was validated and that form submitted.
+    setName('');
+    setEmail('');
+    setService('');
+    setAbout('');
+  };
+
   const handleSubmit = () => {};
 
   return (
