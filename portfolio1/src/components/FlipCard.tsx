@@ -4,31 +4,35 @@ import styles from './FlipCard.module.css';
 import { useState } from 'react';
 
 export default function FlipCard({
-  mainTitle,
+  frontTitle,
   backTitle,
-  imgFrontSrc,
-  imgFrontAlt,
-  imgFrontWidth,
-  imgFrontHeight,
+  imgSrc,
+  imgAlt,
+  imgWidth,
+  imgHeight,
   projectType,
-  classname,
-  techStack,
+  buttonTypeClassName,
+  techStackIconsImageSrc,
+  techStackIconsImageAlt,
+  techStackIconsImageWidth,
+  techStackIconsImageHeight,
   shortDescription,
-  buttonText,
-  buttonClassName,
+  buttonProjectText,
 }: {
-  mainTitle: string;
+  frontTitle: string;
   backTitle: string;
-  imgFrontSrc: any;
-  imgFrontAlt: string;
-  imgFrontWidth: number;
-  imgFrontHeight: number;
+  imgSrc: any;
+  imgAlt: string;
+  imgWidth: number;
+  imgHeight: number;
   projectType: string;
-    classname: string;
-    techStack: string;
+  buttonTypeClassName: string;
+  techStackIconsImageSrc: any;
+  techStackIconsImageAlt: string;
+  techStackIconsImageWidth: number;
+  techStackIconsImageHeight: number;
   shortDescription: string;
-  buttonText: string;
-  buttonClassName: string;
+  buttonProjectText: string;
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
   console.log(isFlipped);
@@ -56,9 +60,8 @@ export default function FlipCard({
           <div
             className={`flex flex-col ${styles.flip_card_face} ${styles.flip_card_face_front}`}
           >
-            <div>{mainTitle}</div>
-            {/* TODO: typeDesignation = Site or App. Represent as a pill shaped badge "button" with Site or App - aligned to the right of the card*/}
-            <Button text={projectType} className={classname} />
+            <div>{frontTitle}</div>
+            <Button text={projectType} className={buttonTypeClassName} />
           </div>
           <div
             className={`${styles.flip_card_face} ${styles.flip_card_face_back}`}
@@ -66,23 +69,24 @@ export default function FlipCard({
             <div className={`${styles.flip_card_content}`}>
               <div className={`${styles.flip_card_header}`}>
                 <h2>{backTitle}</h2>
-                {/* TODO: This will show the tech stack used to build the project as icons */}
 
-                {/* TODO: images should be of the logos for these sites/apps */}
               </div>
               <div className="flex justify-center">
+                {/* TODO: images should be of the logos for these sites/apps */}
                 <Image
-                  src={imgFrontSrc}
-                  alt={imgFrontAlt}
-                  width={imgFrontWidth}
-                  height={imgFrontHeight}
-                />
+                  src={imgSrc}
+                  alt={imgAlt}
+                  width={imgWidth}
+                  height={imgHeight}
+                  />
               </div>
               <div className={styles.flip_card_body}>
-                <span>{techStack}</span>
+                <span>Tech Stack:</span>
+                <span><Image src={ techStackIconsImageSrc} alt={techStackIconsImageAlt} width={techStackIconsImageWidth} height={techStackIconsImageHeight} /></span>
+                  {/* TODO: This will show the tech stack used to build the project as icons */}
                 <p>{shortDescription}</p>
                 {/* TODO: this button will take you to that specific projects page */}
-                <Button text={buttonText} className="mt-12" />
+                <Button text={buttonProjectText} className="border-black" />
               </div>
             </div>
           </div>

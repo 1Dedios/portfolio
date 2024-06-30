@@ -1,4 +1,5 @@
 import logo from '/public/logo.png';
+import ts from '/public/ts-logo.png'
 import Button from '@/components/Button';
 import Flipcard from '../components/FlipCard';
 
@@ -15,64 +16,24 @@ export default function ProjectSection() {
           className={'bg-gold p-3 rounded-full text-navy'}
         />
       </div>
-
       <div className="flex flex-row space-x-4 justify-evenly">
         <Flipcard
-          mainTitle="Personal Website"
+          frontTitle="Personal Website"
           backTitle="Personal Website"
-          imgFrontSrc={logo}
-          imgFrontAlt="logo"
-          imgFrontWidth={flipFirstCardWidth}
-          imgFrontHeight={flipFirstCardHeight}
+          imgSrc={logo}
+          imgAlt="logo"
+          imgWidth={flipFirstCardWidth}
+          imgHeight={flipFirstCardHeight}
           projectType="Type: Web App"
-          techStack='Tech: Next.js, TailwindCSS, React, Typescript'
+          buttonTypeClassName="button"
+          techStackIconsImageSrc={ts}
+          techStackIconsImageAlt='typescript logo'
+          techStackIconsImageWidth={16}
+          techStackIconsImageHeight={16}
           shortDescription="SHORT DESCRIPTION"
-          classname="class"
-          buttonText="button"
-          buttonClassName="button"
+          buttonProjectText="button"
         />
-        <Flipcard
-          mainTitle="TITLE"
-          backTitle="BACK BACK BACK BACK"
-          imgFrontSrc={logo}
-          imgFrontAlt="logo"
-          imgFrontWidth={flipFirstCardWidth}
-          imgFrontHeight={flipFirstCardHeight}
-          projectType="Type: project type"
-          techStack='Tech: Next.js, TailwindCSS, React, Typescript'
-          shortDescription="SHORT DESCRIPTION"
-          classname="class"
-          buttonText="button"
-          buttonClassName="button"
-        />
-        <Flipcard
-          mainTitle="TITLE"
-          backTitle="BACK BACK BACK BACK"
-          imgFrontSrc={logo}
-          imgFrontAlt="logo"
-          imgFrontWidth={flipFirstCardWidth}
-          imgFrontHeight={flipFirstCardHeight}
-          projectType="Type: project type"
-          techStack='Tech: Next.js, TailwindCSS, React, Typescript'
-          shortDescription="SHORT DESCRIPTION"
-          classname="class"
-          buttonText="button"
-          buttonClassName="button"
-        />
-        <Flipcard
-          mainTitle="TITLE"
-          backTitle="BACK BACK BACK BACK"
-          imgFrontSrc={logo}
-          imgFrontAlt="logo"
-          imgFrontWidth={flipFirstCardWidth}
-          imgFrontHeight={flipFirstCardHeight}
-          projectType="Type: project type"
-          techStack='Tech: Next.js, TailwindCSS, React, Typescript'
-          shortDescription="SHORT DESCRIPTION"
-          classname="class"
-          buttonText="button"
-          buttonClassName="button"
-        />
+        
       </div>
     </div>
   );

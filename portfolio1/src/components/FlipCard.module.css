@@ -1,7 +1,7 @@
 .flip_card {
   margin: 100px auto 0;
   width: 600px;
-  height: 450px;
+  height: 500px;
   perspective: 1000px;
 }
 
@@ -85,5 +85,5 @@
 
 .flip_card_body {
   padding: 30px;
-  line-height: 3em;
+  line-height: 1.5em;
 }
