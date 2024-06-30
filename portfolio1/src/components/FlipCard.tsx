@@ -6,26 +6,26 @@ import { useState } from 'react';
 export default function FlipCard({
   mainTitle,
   backTitle,
-  subTitle,
   imgFrontSrc,
   imgFrontAlt,
   imgFrontWidth,
   imgFrontHeight,
   projectType,
   classname,
+  techStack,
   shortDescription,
   buttonText,
   buttonClassName,
 }: {
   mainTitle: string;
   backTitle: string;
-  subTitle: string;
   imgFrontSrc: any;
   imgFrontAlt: string;
   imgFrontWidth: number;
   imgFrontHeight: number;
   projectType: string;
-  classname: string;
+    classname: string;
+    techStack: string;
   shortDescription: string;
   buttonText: string;
   buttonClassName: string;
@@ -59,8 +59,6 @@ export default function FlipCard({
             <div>{mainTitle}</div>
             {/* TODO: typeDesignation = Site or App. Represent as a pill shaped badge "button" with Site or App - aligned to the right of the card*/}
             <Button text={projectType} className={classname} />
-
-            <div>{subTitle}</div>
           </div>
           <div
             className={`${styles.flip_card_face} ${styles.flip_card_face_back}`}
@@ -81,7 +79,7 @@ export default function FlipCard({
                 />
               </div>
               <div className={styles.flip_card_body}>
-                <span>Tech Stack: React, NextJS</span>
+                <span>{techStack}</span>
                 <p>{shortDescription}</p>
                 {/* TODO: this button will take you to that specific projects page */}
                 <Button text={buttonText} className="mt-12" />
