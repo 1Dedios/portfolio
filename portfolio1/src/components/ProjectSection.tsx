@@ -1,5 +1,7 @@
 import logo from '/public/logo.png';
-import ts from '/public/tech-stack-logos/nextdotjs.svg'
+import nextjs from '/public/tech-stack-logos/nextdotjs.svg'
+import ts from '/public/tech-stack-logos/ts.svg'
+import tailwindcss from '/public/tech-stack-logos/tailwindcss.svg'
 import Button from '@/components/Button';
 import Flipcard from '../components/FlipCard';
 
@@ -26,12 +28,21 @@ export default function ProjectSection() {
           imgHeight={flipFirstCardHeight}
           projectType="Type: Web App"
           buttonTypeClassName="button"
-          techStackIconsImageSrc={ts}
-          techStackIconsImageAlt='typescript logo'
+          techStackIconsImageSrc={nextjs}
+          techStackIconsImageAlt='nextjs logo'
           techStackIconsImageWidth={16}
           techStackIconsImageHeight={16}
+          techStackIconsImageSrc2={ts}
+          techStackIconsImageAlt2='typescript logo'
+          techStackIconsImageWidth2={16}
+          techStackIconsImageHeight2={16}
+          techStackIconsImageSrc3={tailwindcss}
+          techStackIconsImageAlt3='tailwindcss logo'
+          techStackIconsImageWidth3={16}
+          techStackIconsImageHeight3={16}
           shortDescription="SHORT DESCRIPTION"
           buttonProjectText="button"
+          buttonCodeText='View Code'
         />
         
       </div>

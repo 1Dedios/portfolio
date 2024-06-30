@@ -16,8 +16,17 @@ export default function FlipCard({
   techStackIconsImageAlt,
   techStackIconsImageWidth,
   techStackIconsImageHeight,
+  techStackIconsImageSrc2,
+  techStackIconsImageAlt2,
+  techStackIconsImageWidth2,
+  techStackIconsImageHeight2,
+  techStackIconsImageSrc3,
+  techStackIconsImageAlt3,
+  techStackIconsImageWidth3,
+  techStackIconsImageHeight3,
   shortDescription,
   buttonProjectText,
+  buttonCodeText,
 }: {
   frontTitle: string;
   backTitle: string;
@@ -30,9 +39,18 @@ export default function FlipCard({
   techStackIconsImageSrc: any;
   techStackIconsImageAlt: string;
   techStackIconsImageWidth: number;
-  techStackIconsImageHeight: number;
+    techStackIconsImageHeight: number;
+  techStackIconsImageSrc2: any,
+  techStackIconsImageAlt2: string,
+  techStackIconsImageWidth2: number,
+  techStackIconsImageHeight2: number,
+  techStackIconsImageSrc3: any,
+  techStackIconsImageAlt3: string,
+  techStackIconsImageWidth3: number,
+  techStackIconsImageHeight3: number,
   shortDescription: string;
   buttonProjectText: string;
+  buttonCodeText: string;
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
   console.log(isFlipped);
@@ -85,11 +103,13 @@ export default function FlipCard({
                 <span>Tech Stack:</span>
                 <div className='flex flex-row space-x-2'>
                   <Image src={techStackIconsImageSrc} alt={techStackIconsImageAlt} width={techStackIconsImageWidth} height={techStackIconsImageHeight} />
-                  <Image src={ techStackIconsImageSrc} alt={techStackIconsImageAlt} width={techStackIconsImageWidth} height={techStackIconsImageHeight} />
+                  <Image src={techStackIconsImageSrc2} alt={techStackIconsImageAlt2} width={techStackIconsImageWidth2} height={techStackIconsImageHeight2} />
+                  <Image src={ techStackIconsImageSrc3} alt={techStackIconsImageAlt3} width={techStackIconsImageWidth3} height={techStackIconsImageHeight3} />
                 </div>
                 <p>{shortDescription}</p>
                 {/* TODO: this button will take you to that specific projects page */}
-                <Button text={buttonProjectText} className="border-black" />
+                <Button text={buttonProjectText} className="border-2 border-black mt-2 p-1" />
+                <Button text={buttonCodeText} className='border-2 border-black ml-2 mt-2 p-1' />
               </div>
             </div>
           </div>
