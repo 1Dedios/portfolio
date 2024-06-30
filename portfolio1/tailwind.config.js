@@ -15,7 +15,10 @@ module.exports = {
       },
       colors: {
         purple: '#6F38C5',
-        navy: '#00224D',
+        turk: '#a4f4fa',
+        jasper: '#594cc0',
+        navy: '#00224D',  
+        ally: '#3e62c1',
         lavender: '#EDE4FF',
         gold: '#FBBD23',
         creme: '#FFFAE6',
