@@ -1,9 +1,7 @@
 import Image from 'next/image';
 import Head from 'next/head';
 import Logo from '/public/logo.png';
-import { UilGithub } from '@iconscout/react-unicons';
-import { UilLinkedin } from '@iconscout/react-unicons';
-import { UilEnvelopeMinus } from '@iconscout/react-unicons';
+import { UilGithub, UilLinkedin, UilEnvelopeMinus } from '@iconscout/react-unicons';
 
 export default function Navbar() {
   return (
