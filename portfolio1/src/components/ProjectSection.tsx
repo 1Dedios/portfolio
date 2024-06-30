@@ -6,8 +6,8 @@ import Button from '@/components/Button';
 import Flipcard from '../components/FlipCard';
 
 export default function ProjectSection() {
-  const flipFirstCardWidth = 200;
-  const flipFirstCardHeight = 50;
+  const flipCardImageWidth = 200;
+  const flipCardImageHeight = 50;
 
   return (
     <div className="min-h-screen h-full px-20 py-10 bg-navy">
@@ -24,8 +24,58 @@ export default function ProjectSection() {
           backTitle="Personal Website"
           imgSrc={logo}
           imgAlt="logo"
-          imgWidth={flipFirstCardWidth}
-          imgHeight={flipFirstCardHeight}
+          imgWidth={flipCardImageWidth}
+          imgHeight={flipCardImageHeight}
+          projectType="Type: Web App"
+          buttonTypeClassName="button"
+          techStackIconsImageSrc={nextjs}
+          techStackIconsImageAlt='nextjs logo'
+          techStackIconsImageWidth={16}
+          techStackIconsImageHeight={16}
+          techStackIconsImageSrc2={ts}
+          techStackIconsImageAlt2='typescript logo'
+          techStackIconsImageWidth2={16}
+          techStackIconsImageHeight2={16}
+          techStackIconsImageSrc3={tailwindcss}
+          techStackIconsImageAlt3='tailwindcss logo'
+          techStackIconsImageWidth3={16}
+          techStackIconsImageHeight3={16}
+          shortDescription="SHORT DESCRIPTION"
+          buttonProjectText="button"
+          buttonCodeText='View Code'
+        />
+        <Flipcard
+          frontTitle="Personal Website"
+          backTitle="Personal Website"
+          imgSrc={logo}
+          imgAlt="logo"
+          imgWidth={flipCardImageWidth}
+          imgHeight={flipCardImageHeight}
+          projectType="Type: Web App"
+          buttonTypeClassName="button"
+          techStackIconsImageSrc={nextjs}
+          techStackIconsImageAlt='nextjs logo'
+          techStackIconsImageWidth={16}
+          techStackIconsImageHeight={16}
+          techStackIconsImageSrc2={ts}
+          techStackIconsImageAlt2='typescript logo'
+          techStackIconsImageWidth2={16}
+          techStackIconsImageHeight2={16}
+          techStackIconsImageSrc3={tailwindcss}
+          techStackIconsImageAlt3='tailwindcss logo'
+          techStackIconsImageWidth3={16}
+          techStackIconsImageHeight3={16}
+          shortDescription="SHORT DESCRIPTION"
+          buttonProjectText="button"
+          buttonCodeText='View Code'
+        />
+        <Flipcard
+          frontTitle="Personal Website"
+          backTitle="Personal Website"
+          imgSrc={logo}
+          imgAlt="logo"
+          imgWidth={flipCardImageWidth}
+          imgHeight={flipCardImageHeight}
           projectType="Type: Web App"
           buttonTypeClassName="button"
           techStackIconsImageSrc={nextjs}

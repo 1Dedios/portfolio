@@ -51,9 +51,9 @@ export default function FlipCard({
   shortDescription: string;
   buttonProjectText: string;
   buttonCodeText: string;
-}) {
+  }) {
+  
   const [isFlipped, setIsFlipped] = useState(false);
-  console.log(isFlipped);
 
   const cardFlip = () => {
     if (!isFlipped) {
@@ -99,7 +99,6 @@ export default function FlipCard({
                   />
               </div>
               <div className={styles.flip_card_body}>
-                  {/* TODO: This will show the tech stack used to build the project as icons */}
                 <span>Tech Stack:</span>
                 <div className='flex flex-row space-x-2'>
                   <Image src={techStackIconsImageSrc} alt={techStackIconsImageAlt} width={techStackIconsImageWidth} height={techStackIconsImageHeight} />
@@ -107,7 +106,6 @@ export default function FlipCard({
                   <Image src={ techStackIconsImageSrc3} alt={techStackIconsImageAlt3} width={techStackIconsImageWidth3} height={techStackIconsImageHeight3} />
                 </div>
                 <p>{shortDescription}</p>
-                {/* TODO: this button will take you to that specific projects page */}
                 <Button text={buttonProjectText} className="border-2 border-black mt-2 p-1" />
                 <Button text={buttonCodeText} className='border-2 border-black ml-2 mt-2 p-1' />
               </div>
