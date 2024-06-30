@@ -1,7 +1,7 @@
 export default function Benefits() {
   return (
     <div className="bg-creme h-96">
-      <h1 className="text-navy text-6xl text-center pt-4 font-poppins pb-10">
+      <h1 className="text-navy text-6xl text-center pt-4 font-poppins font-bold pb-10">
         BENEFITS OF MY WORK
       </h1>
       <div className="flex justify-center p-4 text-navy text-center">
