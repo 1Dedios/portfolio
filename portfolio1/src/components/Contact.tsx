@@ -22,41 +22,43 @@ export default function Contact() {
   const handleSubmit = () => {};
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className='p-60 bg-creme'>
         <h1>Collaboration</h1>
         <p>Have a project?</p>
         <p>Big or small, lets connect.</p>
-        <label htmlFor="fullname">
-          <h1>Name:</h1>
-        </label>
-        <input
-          value={name}
-          onChange={(e) => setName(e.currentTarget.value)}
-          type="text"
-          id="fullname"
-        />
-        <label htmlFor="email">Email</label>
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.currentTarget.value)}
-          type="email"
-          id="email"
-        />
-        <label htmlFor="service">What service are you looking for?</label>
-        <input
-          value={service}
-          onChange={(e) => setService(e.currentTarget.value)}
-          type="text"
-          id="service"
-        />
-        <label htmlFor="about">Tell Me More:</label>
-        <textarea
-          value={about}
-          onChange={(e) => setAbout(e.currentTarget.value)}
-          id="about"
-        ></textarea>
-        <Button className="" text="Submit" />
+      <form onSubmit={handleSubmit}>
+        <div className='flex flex-col'>
+          <label htmlFor="fullname">
+            <h1>Name:</h1>
+          </label>
+          <input
+            value={name}
+            onChange={(e) => setName(e.currentTarget.value)}
+            type="text"
+            id="fullname"
+          />
+          <label htmlFor="email">Email</label>
+          <input
+            value={email}
+            onChange={(e) => setEmail(e.currentTarget.value)}
+            type="email"
+            id="email"
+          />
+          <label htmlFor="service">What service are you looking for?</label>
+          <input
+            value={service}
+            onChange={(e) => setService(e.currentTarget.value)}
+            type="text"
+            id="service"
+          />
+          <label htmlFor="about">Tell Me More:</label>
+          <textarea
+            value={about}
+            onChange={(e) => setAbout(e.currentTarget.value)}
+            id="about"
+          ></textarea>
+          <Button className="" text="Submit" />
+        </div>
       </form>
     </div>
   );

@@ -10,8 +10,8 @@ export default function ProjectSection() {
   const flipCardImageHeight = 50;
 
   return (
-    <div className="min-h-screen h-full px-20 py-10 bg-navy">
-      <h1 className="text-6xl text-center font-poppins pb-10">PROJECTS</h1>
+    <div className="min-h-screen h-full px-20 py-10 bg-creme">
+      <h1 className="text-6xl text-center font-poppins pb-10 text-navy">PROJECTS</h1>
       <div className="flex flex-col items-center justify-center pb-4">
         <Button
           text="👀 Portfolio"
