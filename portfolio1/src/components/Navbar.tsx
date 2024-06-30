@@ -60,13 +60,13 @@ export default function Navbar() {
       {/* links to the left of the logo */}
       <div>
         <ul className="flex flex-row space-x-8">
-          <li className="hover:text-gold hover:uppercase">
+          <li className="hover:text-gold hover:uppercase hover:font-semibold">
             <a href="">Software</a>
           </li>
-          <li className="hover:text-gold hover:uppercase">
+          <li className="hover:text-gold hover:uppercase hover:font-semibold">
             <a href="">Cybersecurity</a>
           </li>
-          <li className="hover:text-gold hover:uppercase">
+          <li className="hover:text-gold hover:uppercase hover:font-semibold">
             <a href="">Blog</a>
           </li>
         </ul>
@@ -80,14 +80,14 @@ export default function Navbar() {
 
       {/* links to the right of the logo */}
       <div>
-        <ul className="flex flex-row space-x-8">
-          <li className="hover:text-gold hover:uppercase">
+        <ul className="flex flex-row space-x-8 ">
+          <li className="hover:text-gold hover:uppercase hover:font-semibold">
             <a href="">About</a>
           </li>
-          <li className="hover:text-gold hover:uppercase">
+          <li className="hover:text-gold hover:uppercase hover:font-semibold">
             <a href="">Resume</a>
           </li>
-          <li className="hover:text-gold hover:uppercase">
+          <li className="hover:text-gold hover:uppercase hover:font-semibold">
             <a href="">Contact</a>
           </li>
         </ul>
