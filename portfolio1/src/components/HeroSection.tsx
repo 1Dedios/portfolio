@@ -51,7 +51,7 @@ export default function HeroSection() {
             >
             </h2>
           </div>
-          <span className="chat chat-end text-center w-64 h-40 inline-block absolute top-40 bottom-15 left-20 mx-80 my-40 md:-left-0 md:mx-10 lg:mx-60 hidden lg:block md:block">
+          <span className="chat chat-end text-center w-64 h-40 inline-block absolute top-40 bottom-15 left-20 mx-80 my-40 hidden md:-left-0 md:mx-10 lg:mx-60 lg:my-20 lg:block md:block">
             <div className="chat-bubble bg-creme shadow-md shadow-slate-200 font-sans text-navy">
               Highly skilled, professional, polyglot Software Developer. I am
               passionate about solving problems through Technology and building
