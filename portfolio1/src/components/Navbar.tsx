@@ -56,6 +56,7 @@ export default function Navbar() {
       </div>
 
       {/* links to the left of the logo */}
+      {/* TODO: add visited property to links to change color when they've been clicked */}
       <div>
         <ul className="flex flex-row space-x-8">
           <li className="hover:text-gold hover:uppercase hover:font-semibold">

@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import Button from './Button';
+import Image from 'next/image';
+import logo from '/public/dedios_logo.png';
 
 export default function Contact() {
   const [name, setName] = useState('');
@@ -22,12 +24,16 @@ export default function Contact() {
   const handleSubmit = () => {};
 
   return (
-    <div className='p-60 bg-creme'>
-        <h1>Collaboration</h1>
-        <p>Have a project?</p>
-        <p>Big or small, lets connect.</p>
-      <form onSubmit={handleSubmit}>
-        <div className='flex flex-col'>
+    <div className='p-40 bg-creme'>
+      <h1 className='text-center text-6xl text-navy font-bold font-poppins'>COLLABORATION</h1>
+      <div className='flex justify-center pt-5'>
+        <Image src={logo } alt='dedios logo' width='128' height='128'/>
+
+      </div>
+      <form onSubmit={handleSubmit} className='text-navy leading-10'>
+        <div className='flex flex-col p-10 font-semibold'>
+          <p className='text-navy pt-5'>Have a project?</p>
+          <p className='text-navy mb-4'>Big or small, lets connect.</p>
           <label htmlFor="fullname">
             <h1>Name:</h1>
           </label>
@@ -35,29 +41,29 @@ export default function Contact() {
             value={name}
             onChange={(e) => setName(e.currentTarget.value)}
             type="text"
-            id="fullname"
+            id="fullname" className='text-creme bg-navy'
           />
           <label htmlFor="email">Email</label>
           <input
             value={email}
             onChange={(e) => setEmail(e.currentTarget.value)}
             type="email"
-            id="email"
+            id="email" className='text-creme bg-navy'
           />
           <label htmlFor="service">What service are you looking for?</label>
           <input
             value={service}
             onChange={(e) => setService(e.currentTarget.value)}
             type="text"
-            id="service"
+            id="service" className='text-creme bg-navy'
           />
           <label htmlFor="about">Tell Me More:</label>
           <textarea
             value={about}
             onChange={(e) => setAbout(e.currentTarget.value)}
-            id="about"
+            id="about" className='text-creme bg-navy'
           ></textarea>
-          <Button className="" text="Submit" />
+          <Button className="flex justify-center border-2 mt-6 hover:uppercase hover:bg-gold" text="Submit" />
         </div>
       </form>
     </div>
