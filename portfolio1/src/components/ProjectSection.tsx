@@ -1,5 +1,5 @@
 import logo from '/public/logo.png';
-import ts from '/public/ts-logo.png'
+import ts from '/public/tech-stack-logos/nextdotjs.svg'
 import Button from '@/components/Button';
 import Flipcard from '../components/FlipCard';
 

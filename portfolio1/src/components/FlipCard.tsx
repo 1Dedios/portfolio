@@ -81,9 +81,12 @@ export default function FlipCard({
                   />
               </div>
               <div className={styles.flip_card_body}>
-                <span>Tech Stack:</span>
-                <span><Image src={ techStackIconsImageSrc} alt={techStackIconsImageAlt} width={techStackIconsImageWidth} height={techStackIconsImageHeight} /></span>
                   {/* TODO: This will show the tech stack used to build the project as icons */}
+                <span>Tech Stack:</span>
+                <div className='flex flex-row space-x-2'>
+                  <Image src={techStackIconsImageSrc} alt={techStackIconsImageAlt} width={techStackIconsImageWidth} height={techStackIconsImageHeight} />
+                  <Image src={ techStackIconsImageSrc} alt={techStackIconsImageAlt} width={techStackIconsImageWidth} height={techStackIconsImageHeight} />
+                </div>
                 <p>{shortDescription}</p>
                 {/* TODO: this button will take you to that specific projects page */}
                 <Button text={buttonProjectText} className="border-black" />
