@@ -32,8 +32,8 @@ export default function Contact() {
       </div>
       <form onSubmit={handleSubmit} className='text-navy leading-10'>
         <div className='flex flex-col p-10 font-semibold'>
-          <p className='text-navy pt-5'>Have a project?</p>
-          <p className='text-navy mb-4'>Big or small, lets connect.</p>
+          <p className='pt-5'>Have a project?</p>
+          <span>I am open to projects and Technical Writing opportunities. You can also pitch me your app ideas and we can discuss their feasibility. </span>
           <label htmlFor="fullname">
             <h1>Name:</h1>
           </label>
@@ -63,7 +63,7 @@ export default function Contact() {
             onChange={(e) => setAbout(e.currentTarget.value)}
             id="about" className='text-creme bg-navy'
           ></textarea>
-          <Button className="flex justify-center border-2 mt-6 hover:uppercase hover:bg-gold" text="Submit" />
+          <Button className="mt-6 hover:uppercase hover:bg-gold rounded-lg" text="Submit" />
         </div>
       </form>
     </div>
