@@ -42,16 +42,16 @@ export default function HeroSection() {
               <Image src={watermelon} alt="watermelon logo" />
             </div>
             <h1
-              className={`font-nosifer text-9xl font-extrabold absolute -my-20 -mx-20 -z-10 text-creme`}
+              className={`font-nosifer text-9xl text-center font-extrabold absolute -mx-20 -my-20 -z-10 text-creme`}
             >
               <AttentionSeeker effect="tada">Eddie P</AttentionSeeker>
             </h1>
             <h2
-              className={`font-poppins font-extrabold text-2xl italic mt-20 pt-5 text-creme`} ref={careerTitle}
+              className={`font-poppins font-extrabold text-4xl italic mt-20 pt-5 text-creme`} ref={careerTitle}
             >
             </h2>
           </div>
-          <span className="chat chat-end text-center w-64 h-40 inline-block absolute top-40 bottom-15 left-20 mx-80 my-40 hidden md:-left-0 md:mx-10 lg:mx-60 lg:my-20 lg:block md:block">
+          <span className="chat text-center w-64 h-40 inline-block absolute top-40 bottom-15 left-20 mx-80 my-40 hidden md:-left-0 md:mx-10 lg:mx-60 lg:my-20 lg:block md:block">
             <div className="chat-bubble bg-creme shadow-md shadow-slate-200 font-sans text-navy">
               Highly skilled, professional, polyglot Software Developer. I am
               passionate about solving problems through Technology and building
