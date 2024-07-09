@@ -12,8 +12,7 @@ export default function Footer() {
             Copyright © 2022-2024 - Created w/ ❤️ Eddie Padilla
           </p>
         </div>
-        <div>
-          <div className="grid grid-flow-col gap-1">
+        <div className="grid grid-flow-col gap-1">
             <a href="https://www.linkedin.com/in/epadilla1/">
               <UilLinkedin />
             </a>
@@ -24,7 +23,6 @@ export default function Footer() {
               <UilEnvelopeMinus />
             </a>
           </div>
-        </div>
       </div>
     </>
   );
