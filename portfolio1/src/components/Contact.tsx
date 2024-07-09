@@ -25,15 +25,14 @@ export default function Contact() {
 
   return (
     <div className='p-40 bg-creme'>
-      <h1 className='text-center text-6xl text-navy font-bold font-poppins'>COLLABORATION</h1>
+      <h1 className='text-center text-6xl text-navy font-bold font-poppins pb-10'>COLLABORATION</h1>
       <div className='flex justify-center pt-5'>
         <Image src={logo } alt='dedios logo' width='128' height='128'/>
-
       </div>
+      <p className='pt-5 text-xl text-center text-navy font-semibold'>Have a project?</p>
+      <p className='text-center textarea-md text-navy font-semibold'> I&apos;m open to projects and Technical Writing opportunities.</p>
       <form onSubmit={handleSubmit} className='text-navy leading-10'>
         <div className='flex flex-col p-10 font-semibold'>
-          <p className='pt-5'>Have a project?</p>
-          <span>I am open to projects and Technical Writing opportunities. You can also pitch me your app ideas and we can discuss their feasibility. </span>
           <label htmlFor="fullname">
             <h1>Name:</h1>
           </label>
@@ -43,7 +42,7 @@ export default function Contact() {
             type="text"
             id="fullname" className='text-creme bg-navy'
           />
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">Email:</label>
           <input
             value={email}
             onChange={(e) => setEmail(e.currentTarget.value)}
