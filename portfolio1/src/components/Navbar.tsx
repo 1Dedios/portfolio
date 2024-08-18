@@ -1,7 +1,11 @@
 import Image from 'next/image';
 import Head from 'next/head';
 import Logo from '/public/logo.png';
-import { UilGithub, UilLinkedin, UilEnvelopeMinus } from '@iconscout/react-unicons';
+import {
+  UilGithub,
+  UilLinkedin,
+  UilEnvelopeCheck,
+} from '@iconscout/react-unicons';
 
 export default function Navbar() {
   return (
@@ -100,7 +104,7 @@ export default function Navbar() {
         <a href="https://github.com/1Dedios">
           <UilGithub />
         </a>
-        <UilEnvelopeMinus />
+        <UilEnvelopeCheck />
       </div>
     </div>
   );
