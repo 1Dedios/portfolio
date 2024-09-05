@@ -24,7 +24,7 @@ export default function LinkTree() {
               <h1 className="mt-4">
                 <span className="text-lime-400">$~ </span>Dedios
               </h1>
-              <p className="italic">ECC 11:2</p>
+              <p className="italic text-sm">ECC 11:2</p>
             </div>
             <h1>Tinkerer of Technology</h1>
             <div className="flex flex-row justify-center space-x-1">
@@ -32,7 +32,7 @@ export default function LinkTree() {
               <p>echo $HOME</p>
             </div>
           </div>
-          <div className="flex flex-col space-y-4 mt-6">
+          <div className="flex flex-col space-y-4 mt-6 text-sm">
             <Button
               text="Dev Hardware Setup"
               className="text-center glass rounded-lg pt-4 pb-4 pr-10 pl-10"
