@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import logo from '../../../public/dedios_logo.png';
+import logo from '../../../public/watermelon_me_bitmoji.png';
 import Button from '../../components/Button';
 import {
   UilGithubAlt,
@@ -22,8 +22,10 @@ export default function LinkTree() {
                 <Image src={logo} alt="logo" height={104} width={104} />
               </div>
               {/* TODO: add blinking cursor at the end of name */}
-              <h1 className="mt-4">$~ Dedios</h1>
-              <p>ECC 11:2</p>
+              <h1 className="mt-4">
+                <span className="text-lime-400">$~ </span>Dedios
+              </h1>
+              <p className="italic">ECC 11:2</p>
             </div>
             <h1>Tinkerer of Technology</h1>
             <div className="flex flex-row justify-center space-x-1">
