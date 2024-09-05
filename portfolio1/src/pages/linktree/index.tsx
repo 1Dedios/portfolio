@@ -10,14 +10,13 @@ import {
 
 export default function LinkTree() {
   // current link tree - https://linktr.ee/Dedios
-  // TODO: bg ideally something animated
   return (
     <>
       <main>
         {/**parent div for the whole page */}
-        <div className="flex flex-col justify-center items-center h-screen text-center">
+        <div className="flex flex-col items-center h-screen text-center">
           <div>
-            <div className="flex flex-col items-center avatar mb-6">
+            <div className="flex flex-col items-center avatar mt-20 mb-6">
               <div className="ring-creme ring-offset-base-100 w-24 rounded-full ring ring-offset-2">
                 <Image src={logo} alt="logo" height={104} width={104} />
               </div>
@@ -32,19 +31,21 @@ export default function LinkTree() {
               <UilLocationPinAlt />
               <p>echo $HOME</p>
             </div>
-            <div className="flex flex-row justify-center space-x-4 mt-2">
-              <UilGithubAlt />
-              <UilLinkedinAlt />
-              <UilDiscord />
-            </div>
           </div>
-          <div className="mt-6">
-            {/** TODO: add links
-             * - dev setup with kit
-             * - link to my site
-             * -
-             */}
-            <Button text="LINKS" className="text-2xl text-center" />
+          <div className="flex flex-col space-y-4 mt-6">
+            <Button
+              text="Dev Hardware Setup"
+              className="text-center glass rounded-lg pt-4 pb-4 pr-10 pl-10"
+            />
+            <Button
+              text="My Site"
+              className="text-center glass rounded-lg pt-4 pb-4 pr-10 pl-10"
+            />
+          </div>
+          <div className="flex flex-row justify-center space-x-4 mt-6">
+            <UilGithubAlt />
+            <UilLinkedinAlt />
+            <UilDiscord />
           </div>
         </div>
       </main>
