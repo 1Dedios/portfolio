@@ -11,11 +11,12 @@ export default function ProjectSection() {
 
   return (
     <div className="min-h-screen h-full px-20 py-10 bg-creme">
-      <h1 className="text-6xl text-center font-poppins font-bold p-10 pb-10 text-navy">PROJECTS</h1>
+      <h1 className="text-6xl text-center font-poppins font-bold pt-10 text-navy">PROJECTS</h1>
+      <div className='text-navy text-center pb-10 italic text-sm'>Click to Flip</div>
       <div className="flex flex-col items-center justify-center">
         <Button
-          text="👀 Portfolio"
-          className={'bg-gold p-3 rounded-full text-navy'}
+          text="See 👀 More"
+          className={'bg-gold p-3 pl-5 pr-5 rounded-full text-navy'}
         />
       </div>
       <div className="flex flex-row space-x-4 justify-evenly">
