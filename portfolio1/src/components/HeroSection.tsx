@@ -1,12 +1,10 @@
 import Image from 'next/image';
-import Typed from 'typed.js'
+import Typed from 'typed.js';
 import { useEffect, useRef } from 'react';
 import { AttentionSeeker } from 'react-awesome-reveal';
 import watermelon from '/public/watermelon_me_bitmoji.png';
 
-
 export default function HeroSection() {
-
   const careerTitle = useRef(null);
 
   useEffect(() => {
@@ -26,7 +24,8 @@ export default function HeroSection() {
       loop: true,
       showCursor: false,
     });
-    return () => titleType.destroy()});
+    return () => titleType.destroy();
+  });
 
   return (
     <div>
@@ -47,11 +46,11 @@ export default function HeroSection() {
               <AttentionSeeker effect="tada">Eddie P</AttentionSeeker>
             </h1>
             <h2
-              className={`font-poppins font-extrabold text-4xl italic mt-20 pt-5 text-creme`} ref={careerTitle}
-            >
-            </h2>
+              className={`font-poppins font-extrabold text-4xl italic mt-20 pt-5 text-creme`}
+              ref={careerTitle}
+            ></h2>
           </div>
-          <span className="chat text-center w-64 h-40 inline-block absolute top-40 bottom-15 left-20 mx-80 my-40 hidden md:-left-0 md:mx-10 lg:mx-60 lg:my-20 lg:block md:block">
+          <span className="chat text-center w-64 h-40 absolute top-40 bottom-15 left-20 mx-80 my-40 hidden md:-left-0 md:mx-10 lg:mx-60 lg:my-20 lg:block md:block">
             <div className="chat-bubble bg-creme shadow-md shadow-slate-200 font-sans text-navy">
               Highly skilled, professional, polyglot Software Developer. I am
               passionate about solving problems through Technology and building
