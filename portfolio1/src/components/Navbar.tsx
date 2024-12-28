@@ -6,6 +6,7 @@ import {
   UilLinkedin,
   UilEnvelopeCheck,
 } from '@iconscout/react-unicons';
+import Link from 'next/link';
 
 export default function Navbar() {
   return (
@@ -38,22 +39,22 @@ export default function Navbar() {
             className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Software</a>
+              <Link href="/">Software</Link>
             </li>
             <li>
-              <a>CyberSecurity</a>
+              <Link href="/">CyberSecurity</Link>
             </li>
             <li>
-              <a>Blog</a>
+              <Link href="/">Blog</Link>
             </li>
             <li>
-              <a>Resume</a>
+              <Link href="/">Resume</Link>
             </li>
             <li>
-              <a>Contact</a>
+              <Link href="/">Contact</Link>
             </li>
             <li>
-              <a>About</a>
+              <Link href="/">About</Link>
             </li>
           </ul>
         </div>
@@ -64,46 +65,46 @@ export default function Navbar() {
       <div>
         <ul className="flex flex-row space-x-8">
           <li className="hover:text-gold hover:uppercase hover:font-semibold">
-            <a href="">Software</a>
+            <Link href="/">Software</Link>
           </li>
           <li className="hover:text-gold hover:uppercase hover:font-semibold">
-            <a href="">Cybersecurity</a>
+            <Link href="/">Cybersecurity</Link>
           </li>
           <li className="hover:text-gold hover:uppercase hover:font-semibold">
-            <a href="">Blog</a>
+            <Link href="/">Blog</Link>
           </li>
         </ul>
       </div>
 
       <div className="navbar-center flex space-x-6">
-        <a href="/">
+        <Link href="//">
           <Image src={Logo} alt="logo" width={160} height={160} />
-        </a>
+        </Link>
       </div>
 
       {/* links to the right of the logo */}
       <div>
         <ul className="flex flex-row space-x-8 ">
           <li className="hover:text-gold hover:uppercase hover:font-semibold">
-            <a href="">About</a>
+            <Link href="/">About</Link>
           </li>
           <li className="hover:text-gold hover:uppercase hover:font-semibold">
-            <a href="">Resume</a>
+            <Link href="/">Resume</Link>
           </li>
           <li className="hover:text-gold hover:uppercase hover:font-semibold">
-            <a href="">Contact</a>
+            <Link href="/">Contact</Link>
           </li>
         </ul>
       </div>
 
       {/* extreme right elements */}
       <div className="navbar-end gap-4 mr-4">
-        <a href="https://www.linkedin.com/in/epadilla1/">
+        <Link href="/https://www.linkedin.com/in/epadilla1/">
           <UilLinkedin />
-        </a>
-        <a href="https://github.com/1Dedios">
+        </Link>
+        <Link href="/https://github.com/1Dedios">
           <UilGithub />
-        </a>
+        </Link>
         <UilEnvelopeCheck />
       </div>
     </div>
