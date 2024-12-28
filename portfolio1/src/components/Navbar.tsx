@@ -99,10 +99,10 @@ export default function Navbar() {
 
       {/* extreme right elements */}
       <div className="navbar-end gap-4 mr-4">
-        <Link href="/https://www.linkedin.com/in/epadilla1/">
+        <Link href="https://www.linkedin.com/in/epadilla1/">
           <UilLinkedin />
         </Link>
-        <Link href="/https://github.com/1Dedios">
+        <Link href="https://github.com/1Dedios">
           <UilGithub />
         </Link>
         <UilEnvelopeCheck />
