@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import logo from '/public/logo.png';
-import { UilGithub, UilLinkedin, UilEnvelopeMinus } from '@iconscout/react-unicons';
+import * as Unicons from '@iconscout/react-unicons';
 
 export default function Footer() {
   return (
@@ -13,16 +13,16 @@ export default function Footer() {
           </p>
         </div>
         <div className="grid grid-flow-col gap-1">
-            <a href="https://www.linkedin.com/in/epadilla1/">
-              <UilLinkedin />
-            </a>
-            <a href="https://github.com/1Dedios">
-              <UilGithub />
-            </a>
-            <a>
-              <UilEnvelopeMinus />
-            </a>
-          </div>
+          <a href="https://www.linkedin.com/in/epadilla1/">
+            <Unicons.UilLinkedin />
+          </a>
+          <a href="https://github.com/1Dedios">
+            <Unicons.UilGithub />
+          </a>
+          <a>
+            <Unicons.UilEnvelopeMinus />
+          </a>
+        </div>
       </div>
     </>
   );
