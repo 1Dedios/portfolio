@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import logo from '/public/logo.png';
+import BuyCoffee from './BuyCoffee';
 import {
   UilLinkedin,
   UilGithub,
@@ -27,6 +28,7 @@ export default function Footer() {
             <UilEnvelopeMinus />
           </a>
         </div>
+        <BuyCoffee />
       </div>
     </>
   );
