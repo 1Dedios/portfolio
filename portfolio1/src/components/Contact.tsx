@@ -17,24 +17,54 @@ export default function Contact() {
   let getAbout = (event: ChangeEventTextArea) =>
     setAbout(event.currentTarget.value);
 
-  // TODO: implement the functions - isFormValid, handleSubmit
   const isFormValid = () => {
     const formErrors = { name, email, service, about };
+    const serviceArray = service.split(' ');
+    const aboutArray = about.split(' ');
+    const fields = [name, email, ...serviceArray, ...aboutArray];
+    const nameRegEx = new RegExp(`^[a-zA-Z\s]{3,}$`, 'i');
+    const emailRegEx = new RegExp('@{1}', 'g');
+    const regexForServiceAndAbout = new RegExp('^[a-zA-Z0-9s]{3,}$', 'i');
+    const expletives = [
+      'fuck',
+      'shit',
+      'motherfucker',
+      'fucker',
+      'ho',
+      'bitch',
+    ];
 
-    // validate name for no expletives
-    if (!email.match(/@{1}/)) {
+    fields.forEach((el) => {
+      if (expletives.includes(el)) {
+        return window.alert('Expletives are not allowed!');
+      }
+    });
+
+    if (!name.match(nameRegEx)) {
+      formErrors.name = 'A valid name is required';
+    }
+
+    if (!email.match(emailRegEx)) {
       formErrors.email = 'A valid email is required.';
     }
 
-    // validate only text on service, and about
-    if (!service.match(/[a-z]/) && !about.match(/[a-z]/)) {
-      formErrors.service =
-        'Please refrain from using anything other than text. Thank you.';
+    if (
+      !service.match(regexForServiceAndAbout) ||
+      !about.match(regexForServiceAndAbout)
+    ) {
+      if (!service.match(regexForServiceAndAbout)) {
+        formErrors.service =
+          'Please refrain from using anything other than text. Thank you.';
+      } else {
+        formErrors.about =
+          'Please refrain from using anything other than text. Thank you.';
+      }
     }
 
     return formErrors;
   };
 
+  // TODO: implement handleSubmit
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
 
