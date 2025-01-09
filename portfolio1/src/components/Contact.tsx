@@ -127,15 +127,16 @@ export default function Contact() {
             required
             className="text-creme bg-navy"
           />
-          <label htmlFor="about">Tell Me More:</label>
+          <label htmlFor="about">Tell Me More...</label>
           <textarea
             value={about}
             onChange={getAbout}
             id="about"
-            typeof="text"
             name="about"
             required
             className="text-creme bg-navy"
+            rows={4}
+            maxLength={500}
           ></textarea>
           <Button
             className="mt-6 hover:uppercase hover:bg-gold rounded-lg"
