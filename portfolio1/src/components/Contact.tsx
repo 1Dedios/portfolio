@@ -95,7 +95,11 @@ export default function Contact() {
       <p className="text-center textarea-md text-navy font-semibold">
         I&apos;m open to projects and Technical Writing opportunities.
       </p>
-      <form onSubmit={handleSubmit} className="text-navy leading-10">
+      <form
+        onSubmit={handleSubmit}
+        className="text-navy leading-10"
+        method="post"
+      >
         <div className="flex flex-col p-10 font-semibold">
           <label htmlFor="name">Name:</label>
           <input
