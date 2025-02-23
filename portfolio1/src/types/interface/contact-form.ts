@@ -9,5 +9,6 @@ export interface FormFields {
 export interface FormErrors {
   nameError: string;
   emailError: string;
-  serviceOrAboutError: string;
+  serviceError: string;
+  aboutError: string;
 }
