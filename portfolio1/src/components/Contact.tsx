@@ -1,26 +1,23 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { FormFields } from '@/types/interface/contact-form';
 import type {
   FormEvent,
   ChangeEvent,
   ChangeEventTextArea,
 } from '@/types/types';
+import { isFormValid } from '@/util/valid-form';
 import Button from './Button';
 import Image from 'next/image';
 import logo from '/public/dedios_logo.png';
 
 export default function Contact() {
-  useEffect(() => {
-    fetch('/api/hello')
-      .then((res) => console.log(res.body?.toString()))
-      .catch((e) => console.log(e));
-  }, []);
-
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [service, setService] = useState('');
   const [about, setAbout] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
+  // TODO: fix prettier - everything below should be single line
   let getName = (event: ChangeEvent) => setName(event.currentTarget.value);
   let getEmail = (event: ChangeEvent) => setEmail(event.currentTarget.value);
   let getService = (event: ChangeEvent) =>
@@ -28,89 +25,39 @@ export default function Contact() {
   let getAbout = (event: ChangeEventTextArea) =>
     setAbout(event.currentTarget.value);
 
-  const isFormValid = () => {
-    interface FormErrors {
-      nameError: string;
-      emailError: string;
-      serviceOrAboutError: string;
-    }
-    let formErrorObj = {} as FormErrors;
-    const serviceArray = service.split(' ');
-    const aboutArray = about.split(' ');
-    const fields = [name, email, ...serviceArray, ...aboutArray];
-    // TODO: fix regex
-    //const nameRegEx = new RegExp(`^[a-zA-Z\s]{3,}$`);
-    const nameRegEx = new RegExp(`^[A-Za-z]+(?:\s+[A-Za-z]+)?$`);
-    const emailRegEx = new RegExp('@{1}', 'g');
-    const regexForServiceAndAbout = new RegExp('^[a-zA-Z0-9s]{3,}$', 'i');
-    const expletives = [
-      'fuck',
-      'shit',
-      'motherfucker',
-      'fucker',
-      'ho',
-      'bitch',
-    ];
-
-    fields.forEach((el) => {
-      if (expletives.includes(el)) {
-        return window.alert('Expletives are not allowed!');
-      }
-    });
-
-    if (!name.match(nameRegEx)) {
-      formErrorObj.nameError = 'A valid name is required';
-    } else if (!email.match(emailRegEx)) {
-      formErrorObj.emailError = 'A valid email is required.';
-    } else if (
-      !service.match(regexForServiceAndAbout) ||
-      !about.match(regexForServiceAndAbout)
-    ) {
-      formErrorObj.serviceOrAboutError =
-        'Please refrain from using anything other than text. Thank you.';
-    }
-    return formErrorObj;
-  };
-
-  // TODO: implement handleSubmit
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
+    setIsLoading(true);
 
-    const validation = isFormValid();
+    const validation = isFormValid(name, email, service, about);
     console.log(validation);
     const formErrors = Object.values(validation);
-    // ideally we want formErrors to be empty
+    const formData = {} as FormFields;
     console.log(formErrors);
-    //setIsLoading(true);
+    try {
+      if (formErrors.length === 0) {
+        formData.access_key = 'd6d98634-99fa-47cf-8035-b05bd54b1ec7';
+        formData.name = name;
+        formData.email = email;
+        formData.service = service;
+        formData.about = about;
+        console.log(formData);
 
-    if (formErrors.length === 0) {
-      interface ContactFormData {
-        name: string;
-        email: string;
-        service: string;
-        about: string;
+        await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+        // have modal popup that the form was successfully sent
       }
-      const formData = {} as ContactFormData;
-      formData.name = name;
-      formData.email = email;
-      formData.service = service;
-      formData.about = about;
-      const jsonFormData = JSON.stringify(formData);
-      console.log(formData);
-      console.log(jsonFormData);
-      await fetch('/api/contact', { method: 'POST', body: jsonFormData });
-      // have modal popup that the form was successfully sent
-    } else {
-      // alert user of errors in the form with a window object
+      // TODO: handle if there are formErrors
+    } catch (error) {
+      console.log(error);
     }
-
-    // try {
-
-    // } catch (error) {
-    //   console.log(error);
-    // } finally {
-    //   setIsLoading(false);
-    // }
+    // TODO: maybe a finally that clears values from form and set loading state to false to return submit button to normal state
   };
 
   return (
@@ -174,7 +121,6 @@ export default function Contact() {
             rows={4}
             maxLength={500}
           ></textarea>
-          {/*enable and disable submit button depending on loading state of submit handler*/}
           {isLoading ? (
             <Button
               className="mt-6 hover:uppercase hover:bg-gold rounded-lg"
