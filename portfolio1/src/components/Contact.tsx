@@ -1,29 +1,22 @@
-import { useState } from 'react';
-import { FormFields } from '@/types/interface/contact-form';
-import type {
-  FormEvent,
-  ChangeEvent,
-  ChangeEventTextArea,
-} from '@/types/types';
-import { isFormValid } from '@/util/valid-form';
-import Button from './Button';
-import Image from 'next/image';
-import logo from '/public/dedios_logo.png';
+import { useState } from "react";
+import { FormFields } from "@/types/interface/contact-form";
+import type { FormEvent, ChangeEvent, ChangeEventTextArea } from "@/types/types";
+import { isFormValid } from "@/util/valid-form";
+import Button from "./Button";
+import Image from "next/image";
+import logo from "/public/dedios_logo.png";
 
 export default function Contact() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [service, setService] = useState('');
-  const [about, setAbout] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [service, setService] = useState("");
+  const [about, setAbout] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  // TODO: fix prettier - everything below should be single line
   let getName = (event: ChangeEvent) => setName(event.currentTarget.value);
   let getEmail = (event: ChangeEvent) => setEmail(event.currentTarget.value);
-  let getService = (event: ChangeEvent) =>
-    setService(event.currentTarget.value);
-  let getAbout = (event: ChangeEventTextArea) =>
-    setAbout(event.currentTarget.value);
+  let getService = (event: ChangeEvent) => setService(event.currentTarget.value);
+  let getAbout = (event: ChangeEventTextArea) => setAbout(event.currentTarget.value);
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -36,22 +29,22 @@ export default function Contact() {
     console.log(formErrors);
     try {
       if (formErrors.length === 0) {
-        formData.access_key = 'd6d98634-99fa-47cf-8035-b05bd54b1ec7';
+        formData.access_key = "d6d98634-99fa-47cf-8035-b05bd54b1ec7";
         formData.name = name;
         formData.email = email;
         formData.service = service;
         formData.about = about;
         console.log(formData);
 
-        await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
+        await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
+            "Content-Type": "application/json",
+            Accept: "application/json",
           },
           body: JSON.stringify(formData),
         });
-        // have modal popup that the form was successfully sent
+        // TODO: have modal popup that the form was successfully sent
       }
       // TODO: handle if there are formErrors
     } catch (error) {
@@ -68,17 +61,11 @@ export default function Contact() {
       <div className="flex justify-center pt-5">
         <Image src={logo} alt="dedios logo" width="128" height="128" />
       </div>
-      <p className="pt-5 text-xl text-center text-navy font-semibold">
-        Have a project?
-      </p>
+      <p className="pt-5 text-xl text-center text-navy font-semibold">Have a project?</p>
       <p className="text-center textarea-md text-navy font-semibold">
         I&apos;m open to projects and Technical Writing opportunities.
       </p>
-      <form
-        onSubmit={handleSubmit}
-        className="text-navy leading-10"
-        method="post"
-      >
+      <form onSubmit={handleSubmit} className="text-navy leading-10" method="post">
         <div className="flex flex-col p-10 font-semibold">
           <label htmlFor="name">Name:</label>
           <input
