@@ -33,6 +33,13 @@ export default function Contact() {
     event.preventDefault();
     setIsLoading(true);
 
+    if (nameErrorFocus || emailErrorFocus || serviceErrorFocus || aboutErrorFocus) {
+      if (nameErrorFocus) setNameErrorMessage("");
+      if (emailErrorFocus) setEmailErrorMessage("");
+      if (serviceErrorFocus) setServiceErrorMessage("");
+      if (aboutErrorFocus) setAboutErrorMessage("");
+    }
+
     const formData = {} as FormFields;
     const preventXSS = escapeHTML([name, email, service, about]);
     const validation = isFormValid(
@@ -43,8 +50,6 @@ export default function Contact() {
     );
     const formErrors = Object.values(validation);
 
-    console.log(validation);
-    console.log(formErrors);
     try {
       if (formErrors.length === 0) {
         formData.access_key = "d6d98634-99fa-47cf-8035-b05bd54b1ec7";
@@ -52,7 +57,6 @@ export default function Contact() {
         formData.email = preventXSS[1];
         formData.service = preventXSS[2];
         formData.about = preventXSS[3];
-        console.log(formData);
 
         await fetch("https://api.web3forms.com/submit", {
           method: "POST",
@@ -62,38 +66,38 @@ export default function Contact() {
           },
           body: JSON.stringify(formData),
         });
-        // TODO: have modal popup that the form was successfully sent
+        setName("");
+        setEmail("");
+        setService("");
+        setAbout("");
+        setIsLoading(false);
+        // TODO: style modal popup that the form was successfully sent
         setIsModalOpen(true);
       }
+
       throw new Error();
     } catch (error) {
-      // STATUS: test if it works
-      console.log(formErrors);
+      setIsLoading(false);
 
-      for (const [keys, value] of Object.entries(formErrors)) {
-        if (keys === "nameError") {
+      for (const [key, value] of Object.entries(validation)) {
+        if (key === "nameError") {
           setNameErrorFocus(true);
           setNameErrorMessage(value);
         }
-        if (keys === "emailError") {
+        if (key === "emailError") {
           setEmailErrorFocus(true);
           setEmailErrorMessage(value);
         }
-        if (keys === "serviceError") {
+        if (key === "serviceError") {
           setServiceErrorFocus(true);
           setServiceErrorMessage(value);
         }
-        if (keys === "aboutError") {
+        if (key === "aboutError") {
           setAboutErrorFocus(true);
           setAboutErrorMessage(value);
         }
       }
     }
-    setName("");
-    setEmail("");
-    setService("");
-    setAbout("");
-    setIsLoading(false);
   };
 
   const closeModal = () => setIsModalOpen(false);
@@ -112,7 +116,7 @@ export default function Contact() {
       </p>
       <form onSubmit={handleSubmit} className="text-navy leading-10">
         <div className="flex flex-col p-10 font-semibold">
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name">Name:*</label>
           <input
             value={name}
             onChange={getName}
@@ -123,11 +127,11 @@ export default function Contact() {
             className="focus:ring-4 focus:ring-purple  text-creme bg-navy"
           />
           {nameErrorFocus ? (
-            <p className="text-red-500">{nameErrorMessage}</p>
+            <p className="text-red-500 italic">{nameErrorMessage}</p>
           ) : (
-            <p className="hidden text-red-500">{nameErrorMessage}</p>
+            <p className="hidden text-red-500 italic">{nameErrorMessage}</p>
           )}
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email">Email:*</label>
           <input
             value={email}
             onChange={getEmail}
@@ -138,11 +142,11 @@ export default function Contact() {
             className="focus:ring-4 focus:ring-purple text-creme bg-navy"
           />
           {emailErrorFocus ? (
-            <p className="text-red-500">{emailErrorMessage}</p>
+            <p className="text-red-500 italic">{emailErrorMessage}</p>
           ) : (
-            <p className="hidden text-red-500">{emailErrorMessage}</p>
+            <p className="hidden text-red-500 italic">{emailErrorMessage}</p>
           )}
-          <label htmlFor="service">What service(s) are you looking for?</label>
+          <label htmlFor="service">What service(s) are you looking for?*</label>
           <input
             value={service}
             onChange={getService}
@@ -153,11 +157,11 @@ export default function Contact() {
             className="focus:ring-4 focus:ring-purple text-creme bg-navy"
           />
           {serviceErrorFocus ? (
-            <p className="text-red-500">{serviceErrorMessage}</p>
+            <p className="text-red-500 italic">{serviceErrorMessage}</p>
           ) : (
-            <p className="hidden text-red-500">{serviceErrorMessage}</p>
+            <p className="hidden text-red-500 italic">{serviceErrorMessage}</p>
           )}
-          <label htmlFor="about">Tell Me More...</label>
+          <label htmlFor="about">Tell Me More...*</label>
           <textarea
             value={about}
             onChange={getAbout}
@@ -169,9 +173,9 @@ export default function Contact() {
             maxLength={500}
           ></textarea>
           {aboutErrorFocus ? (
-            <p className="text-red-500">{aboutErrorMessage}</p>
+            <p className="text-red-500 italic">{aboutErrorMessage}</p>
           ) : (
-            <p className="hidden text-red-500">{aboutErrorMessage}</p>
+            <p className="hidden text-red-500 italic">{aboutErrorMessage}</p>
           )}
           {isLoading ? (
             <Button
