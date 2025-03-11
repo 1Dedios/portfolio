@@ -3,6 +3,7 @@ import { FormFields } from "@/types/interface/contact-form";
 import type { FormEvent, ChangeEvent, ChangeEventTextArea } from "@/types/types";
 import { isFormValid } from "@/util/isFormValid";
 import { escapeHTML } from "@/util/escapeHTML";
+import Modal from "./Modal";
 import Button from "./Button";
 import Image from "next/image";
 import logo from "/public/dedios_logo.png";
@@ -103,7 +104,7 @@ export default function Contact() {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <div className="p-40 bg-creme">
+    <div className="relative p-40 bg-creme">
       <h1 className="text-center text-6xl text-navy font-bold font-poppins pb-10">
         COLLABORATION
       </h1>
@@ -114,7 +115,11 @@ export default function Contact() {
       <p className="text-center textarea-md text-navy font-semibold">
         I&apos;m open to projects and Technical Writing opportunities.
       </p>
-      <form onSubmit={handleSubmit} className="text-navy leading-10">
+      <form
+        onSubmit={handleSubmit}
+        className="text-navy leading-10"
+        {...(isModalOpen ? { inert: "true" } : {})}
+      >
         <div className="flex flex-col p-10 font-semibold">
           <label htmlFor="name">Name:*</label>
           <input
@@ -126,11 +131,7 @@ export default function Contact() {
             required
             className="focus:ring-4 focus:ring-purple  text-creme bg-navy"
           />
-          {nameErrorFocus ? (
-            <p className="text-red-500 italic">{nameErrorMessage}</p>
-          ) : (
-            <p className="hidden text-red-500 italic">{nameErrorMessage}</p>
-          )}
+          {nameErrorFocus && <p className="text-red-500 italic">{nameErrorMessage}</p>}
           <label htmlFor="email">Email:*</label>
           <input
             value={email}
@@ -141,11 +142,7 @@ export default function Contact() {
             required
             className="focus:ring-4 focus:ring-purple text-creme bg-navy"
           />
-          {emailErrorFocus ? (
-            <p className="text-red-500 italic">{emailErrorMessage}</p>
-          ) : (
-            <p className="hidden text-red-500 italic">{emailErrorMessage}</p>
-          )}
+          {emailErrorFocus && <p className="text-red-500 italic">{emailErrorMessage}</p>}
           <label htmlFor="service">What service(s) are you looking for?*</label>
           <input
             value={service}
@@ -156,10 +153,8 @@ export default function Contact() {
             required
             className="focus:ring-4 focus:ring-purple text-creme bg-navy"
           />
-          {serviceErrorFocus ? (
+          {serviceErrorFocus && (
             <p className="text-red-500 italic">{serviceErrorMessage}</p>
-          ) : (
-            <p className="hidden text-red-500 italic">{serviceErrorMessage}</p>
           )}
           <label htmlFor="about">Tell Me More...*</label>
           <textarea
@@ -172,11 +167,7 @@ export default function Contact() {
             rows={4}
             maxLength={500}
           ></textarea>
-          {aboutErrorFocus ? (
-            <p className="text-red-500 italic">{aboutErrorMessage}</p>
-          ) : (
-            <p className="hidden text-red-500 italic">{aboutErrorMessage}</p>
-          )}
+          {aboutErrorFocus && <p className="text-red-500 italic">{aboutErrorMessage}</p>}
           {isLoading ? (
             <Button
               className="mt-6 hover:uppercase hover:bg-gold rounded-lg"
@@ -192,25 +183,7 @@ export default function Contact() {
           )}
         </div>
       </form>
-      {isModalOpen ? (
-        <div>
-          <p className="text-purple">modal popup</p>
-          <Button
-            onClick={closeModal}
-            text="close"
-            className="text-purple border-4"
-          ></Button>
-        </div>
-      ) : (
-        <div className="hidden">
-          <p className="text-purple">modal popup</p>
-          <Button
-            onClick={closeModal}
-            text="close"
-            className="text-purple border-4"
-          ></Button>
-        </div>
-      )}
+      {isModalOpen && <Modal closeModal={closeModal}></Modal>}
     </div>
   );
 }
