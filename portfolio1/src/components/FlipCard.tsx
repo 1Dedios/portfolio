@@ -1,17 +1,16 @@
-import Image from 'next/image';
-import Button from '@/components/Button';
-import styles from './FlipCard.module.css';
-import { useState } from 'react';
+import Image from "next/image";
+import Button from "@/components/Button";
+import Link from "next/link";
+import styles from "./FlipCard.module.css";
+import { useEffect, useState } from "react";
 
 export default function FlipCard({
-  frontTitle,
-  backTitle,
+  title,
   imgSrc,
   imgAlt,
   imgWidth,
   imgHeight,
   projectType,
-  buttonTypeClassName,
   techStackIconsImageSrc,
   techStackIconsImageAlt,
   techStackIconsImageWidth,
@@ -25,35 +24,43 @@ export default function FlipCard({
   techStackIconsImageWidth3,
   techStackIconsImageHeight3,
   shortDescription,
+  projectLink,
+  codeLink,
   buttonProjectText,
   buttonCodeText,
 }: {
-  frontTitle: string;
-  backTitle: string;
+  title: string;
   imgSrc: any;
   imgAlt: string;
   imgWidth: number;
   imgHeight: number;
   projectType: string;
-  buttonTypeClassName: string;
   techStackIconsImageSrc: any;
   techStackIconsImageAlt: string;
   techStackIconsImageWidth: number;
-    techStackIconsImageHeight: number;
-  techStackIconsImageSrc2: any,
-  techStackIconsImageAlt2: string,
-  techStackIconsImageWidth2: number,
-  techStackIconsImageHeight2: number,
-  techStackIconsImageSrc3: any,
-  techStackIconsImageAlt3: string,
-  techStackIconsImageWidth3: number,
-  techStackIconsImageHeight3: number,
+  techStackIconsImageHeight: number;
+  techStackIconsImageSrc2: any;
+  techStackIconsImageAlt2: string;
+  techStackIconsImageWidth2: number;
+  techStackIconsImageHeight2: number;
+  techStackIconsImageSrc3?: any;
+  techStackIconsImageAlt3?: string;
+  techStackIconsImageWidth3?: number | undefined;
+  techStackIconsImageHeight3?: number | undefined;
   shortDescription: string;
+  projectLink?: string;
+  codeLink: string;
   buttonProjectText: string;
   buttonCodeText: string;
-  }) {
-  
+}) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [thirdTechStackImage, setThirdTechStackImage] = useState(false);
+  const [projectLinkFlag, setProjectLinkFlag] = useState(false);
+
+  useEffect(() => {
+    if (techStackIconsImageSrc3) setThirdTechStackImage(true);
+    if (projectLink) setProjectLinkFlag(true);
+  }, []);
 
   const cardFlip = () => {
     if (!isFlipped) {
@@ -64,50 +71,66 @@ export default function FlipCard({
   };
 
   const flipStyle = {
-    transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(360deg)',
+    transform: isFlipped ? "rotateY(180deg)" : "rotateY(360deg)",
   };
 
   return (
     <>
       <div className={`${styles.flip_card}`}>
-        <div
-          className={styles.flip_card_inner}
-          style={flipStyle}
-          onClick={cardFlip}
-        >
+        <div className={styles.flip_card_inner} style={flipStyle} onClick={cardFlip}>
           <div
             className={`flex flex-col ${styles.flip_card_face} ${styles.flip_card_face_front}`}
           >
-            <div>{frontTitle}</div>
-            <Button text={projectType} className={buttonTypeClassName} />
+            <p className="text-lg text-navy font-bold">{title}</p>
+            <p className="italic text-creme underline decoration-gold">{projectType}</p>
           </div>
-          <div
-            className={`${styles.flip_card_face} ${styles.flip_card_face_back}`}
-          >
+          <div className={`${styles.flip_card_face} ${styles.flip_card_face_back}`}>
             <div className={`${styles.flip_card_content}`}>
               <div className={`${styles.flip_card_header}`}>
-                <h2>{backTitle}</h2>
-
+                <h2 className="text-navy font-bold">{title}</h2>
               </div>
               <div className="flex justify-center">
-                {/* TODO: images should be of the logos for these sites/apps */}
-                <Image
-                  src={imgSrc}
-                  alt={imgAlt}
-                  width={imgWidth}
-                  height={imgHeight}
-                  />
+                <Image src={imgSrc} alt={imgAlt} width={imgWidth} height={imgHeight} />
               </div>
               <div className={styles.flip_card_body}>
-                <span>Tech Stack:</span>
-                <div className='flex flex-row space-x-2'>
-                  <Image src={techStackIconsImageSrc} alt={techStackIconsImageAlt} width={techStackIconsImageWidth} height={techStackIconsImageHeight} />
-                  <Image src={techStackIconsImageSrc2} alt={techStackIconsImageAlt2} width={techStackIconsImageWidth2} height={techStackIconsImageHeight2} />
-                  <Image src={ techStackIconsImageSrc3} alt={techStackIconsImageAlt3} width={techStackIconsImageWidth3} height={techStackIconsImageHeight3} />
+                <span className="text-creme font-bold">Tech Stack:</span>
+                <div className="flex flex-row space-x-2">
+                  <Image
+                    src={techStackIconsImageSrc}
+                    alt={techStackIconsImageAlt}
+                    width={techStackIconsImageWidth}
+                    height={techStackIconsImageHeight}
+                  />
+                  <Image
+                    src={techStackIconsImageSrc2}
+                    alt={techStackIconsImageAlt2}
+                    width={techStackIconsImageWidth2}
+                    height={techStackIconsImageHeight2}
+                  />
+                  {thirdTechStackImage && (
+                    <Image
+                      src={techStackIconsImageSrc3}
+                      alt={techStackIconsImageAlt3 || "no-image"}
+                      width={techStackIconsImageWidth3}
+                      height={techStackIconsImageHeight3}
+                    />
+                  )}
                 </div>
-                <p>{shortDescription}</p>
-                <Button text={buttonProjectText} className="border-2 border-black mt-2 p-1" />
-                <Button text={buttonCodeText} className='border-2 border-black ml-2 mt-2 p-1' />
+                <p className="text-creme italic">{shortDescription}</p>
+                {projectLinkFlag && (
+                  <a href={projectLink} title={title} target="_blank">
+                    <Button
+                      text={buttonProjectText}
+                      className="mt-2 p-1 hover:bg-gold hover:text-navy hover:border-navy hover:border-2 hover:rounded-md"
+                    />
+                  </a>
+                )}
+                <Link href={codeLink} target="_blank">
+                  <Button
+                    text={buttonCodeText}
+                    className="ml-2 mt-2 p-1 hover:bg-gold hover:text-navy hover:border-navy hover:border-2 hover:rounded-md"
+                  />
+                </Link>
               </div>
             </div>
           </div>

@@ -1,12 +1,12 @@
-import Image from 'next/image';
-import logo from '../../../public/watermelon_me_bitmoji.png';
-import Button from '../../components/Button';
+import Image from "next/image";
+import logo from "../../../public/watermelon_me_bitmoji.png";
+import Button from "../../components/Button";
 import {
   UilGithubAlt,
   UilLinkedinAlt,
   UilDiscord,
   UilLocationPinAlt,
-} from '@iconscout/react-unicons';
+} from "@iconscout/react-unicons";
 
 export default function LinkTree() {
   // current link tree - https://linktr.ee/Dedios
@@ -22,7 +22,7 @@ export default function LinkTree() {
               </div>
               {/* TODO: add blinking cursor at the end of name */}
               <h1 className="mt-4">
-                <span className="text-lime-400">$~ </span>Dedios
+                <span className="text-lime-400">:~$ </span>echo Dedios
               </h1>
               <p className="italic text-sm">ECC 11:2</p>
             </div>

@@ -2,13 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Light mode is default */
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --primary: rgb(135, 162, 251);
   --secondary: rgb(215, 217, 226);
+  /* third var is purple in tailwind config */
+  --third: rgb(111, 56, 197);
 }
 
 /* Only active if user prefers dark mode in system */
