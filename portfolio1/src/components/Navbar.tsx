@@ -1,12 +1,8 @@
-import Image from 'next/image';
-import Head from 'next/head';
-import Logo from '/public/logo.png';
-import {
-  UilGithub,
-  UilLinkedin,
-  UilEnvelopeCheck,
-} from '@iconscout/react-unicons';
-import Link from 'next/link';
+import Image from "next/image";
+import Head from "next/head";
+import Logo from "/public/logo.png";
+import { UilGithub, UilLinkedin, UilEnvelopeCheck } from "@iconscout/react-unicons";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
@@ -86,13 +82,13 @@ export default function Navbar() {
       <div>
         <ul className="flex flex-row space-x-8 ">
           <li className="hover:text-gold hover:uppercase hover:font-semibold">
-            <Link href="/">About</Link>
+            <Link href="/whoami">Whoami</Link>
           </li>
           <li className="hover:text-gold hover:uppercase hover:font-semibold">
             <Link href="/">Resume</Link>
           </li>
           <li className="hover:text-gold hover:uppercase hover:font-semibold">
-            <Link href="/">Contact</Link>
+            <Link href="/contact">Contact</Link>
           </li>
         </ul>
       </div>

@@ -1,15 +1,15 @@
 import logo from "/public/logo.png";
 import Link from "next/link";
-import nodeIcon from "../../public/tech-stack-logos/nodedotjs.svg";
-import nextIcon from "../../public/tech-stack-logos/nextdotjs.svg";
-import expressIcon from "../../public/tech-stack-logos/express.svg";
-import tsIcon from "../../public/tech-stack-logos/ts.svg";
-import tailwindcssIcon from "/public/tech-stack-logos/tailwindcss.svg";
-import htmlIcon from "../../public/tech-stack-logos/html5.svg";
-import cssIcon from "../../public/tech-stack-logos/css.svg";
-import jsIcon from "../../public/tech-stack-logos/javascript.svg";
+import nodeIcon from "/public/images/tech-stack-logos/nodedotjs.svg";
+import nextIcon from "/public/images/tech-stack-logos/nextdotjs.svg";
+import expressIcon from "/public/images/tech-stack-logos/express.svg";
+import tsIcon from "/public/images/tech-stack-logos/ts.svg";
+import tailwindcssIcon from "/public/images/tech-stack-logos/tailwindcss.svg";
+import htmlIcon from "/public/images/tech-stack-logos/html5.svg";
+import cssIcon from "/public/images/tech-stack-logos/css.svg";
+import jsIcon from "/public/images/tech-stack-logos/javascript.svg";
 import Button from "@/components/Button";
-import Flipcard from "../components/FlipCard";
+import Flipcard from "@/components/FlipCard";
 
 export default function ProjectSection() {
   const flipCardImageWidth = 200;
