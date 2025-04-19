@@ -9,11 +9,13 @@ export default function LinkTree() {
     <>
       <div className="flex flex-col items-center h-screen text-center">
         <div>
-          <div className="flex flex-col items-center avatar mt-20 mb-6">
-            <div className="ring-creme ring-offset-base-100 w-24 rounded-full ring ring-offset-2">
-              <Image src={logo} alt="logo" height={104} width={104} />
+          <Link href={"/"} target="_blank">
+            <div className="flex flex-col items-center avatar mt-20 mb-6">
+              <div className="ring-creme ring-offset-base-100 w-24 rounded-full ring ring-offset-2">
+                <Image src={logo} alt="logo" height={104} width={104} />
+              </div>
             </div>
-          </div>
+          </Link>
           <p className="mt-4 text-creme">
             <span className="text-lime-400">Dedios@linux-desktop:</span>~$ _
           </p>
@@ -49,10 +51,24 @@ export default function LinkTree() {
             />
           </Link>
         </div>
-        <div className="flex flex-row justify-center space-x-4 mt-6">
-          <UilGithubAlt />
-          <UilLinkedinAlt />
-          <UilDiscord />
+        <div className="flex flex-row justify-center space-x-6 mt-6">
+          <Link href={"https://github.com/1Dedios"} target="_blank">
+            <UilGithubAlt />
+          </Link>
+          <Link href={"https://www.linkedin.com/in/epadilla1/"} target="_blank">
+            <UilLinkedinAlt />
+          </Link>
+          <Link href={"https://www.discord.com/users/dedios"} target="_blank">
+            <UilDiscord />
+          </Link>
+          <Link href={"https://x.com/0x1Dedios"} target="_blank">
+            <Image
+              src="/images/twitter-x.png"
+              alt="twitter-logo"
+              width={24}
+              height={24}
+            />
+          </Link>
         </div>
       </div>
     </>
