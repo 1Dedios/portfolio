@@ -61,19 +61,19 @@ export default function Navbar() {
       <div>
         <ul className="flex flex-row space-x-8">
           <li className="hover:text-gold hover:uppercase hover:font-semibold">
-            <Link href="/">Software</Link>
+            <Link href="/software-projects">Software</Link>
           </li>
           <li className="hover:text-gold hover:uppercase hover:font-semibold">
-            <Link href="/">Cybersecurity</Link>
+            <Link href="/sec-projects">Cybersecurity</Link>
           </li>
           <li className="hover:text-gold hover:uppercase hover:font-semibold">
-            <Link href="/">Blog</Link>
+            <Link href="/blog">Blog</Link>
           </li>
         </ul>
       </div>
 
-      <div className="navbar-center flex space-x-6">
-        <Link href="//">
+      <div className="navbar-center flex space-x-20">
+        <Link href="/">
           <Image src={Logo} alt="logo" width={160} height={160} />
         </Link>
       </div>
@@ -85,7 +85,7 @@ export default function Navbar() {
             <Link href="/whoami">Whoami</Link>
           </li>
           <li className="hover:text-gold hover:uppercase hover:font-semibold">
-            <Link href="/">Resume</Link>
+            <Link href="/resume">Resume</Link>
           </li>
           <li className="hover:text-gold hover:uppercase hover:font-semibold">
             <Link href="/contact">Contact</Link>
