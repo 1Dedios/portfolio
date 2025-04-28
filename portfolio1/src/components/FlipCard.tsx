@@ -28,6 +28,7 @@ export default function FlipCard({
   codeLink,
   buttonProjectText,
   buttonCodeText,
+  blogLink,
 }: {
   title: string;
   imgSrc: any;
@@ -52,14 +53,17 @@ export default function FlipCard({
   codeLink: string;
   buttonProjectText: string;
   buttonCodeText: string;
+  blogLink?: string;
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [thirdTechStackImage, setThirdTechStackImage] = useState(false);
   const [projectLinkFlag, setProjectLinkFlag] = useState(false);
+  const [blogLinkFlag, setBlogLinkFlag] = useState(false);
 
   useEffect(() => {
     if (techStackIconsImageSrc3) setThirdTechStackImage(true);
     if (projectLink) setProjectLinkFlag(true);
+    if (blogLink) setBlogLinkFlag(true);
   }, []);
 
   const cardFlip = () => {
@@ -125,12 +129,20 @@ export default function FlipCard({
                     />
                   </a>
                 )}
-                <Link href={codeLink} target="_blank">
+                <Link href={codeLink} title="src-code" target="_blank">
                   <Button
                     text={buttonCodeText}
                     className="ml-2 mt-2 p-1 hover:bg-gold hover:text-navy hover:border-navy hover:border-2 hover:rounded-md"
                   />
                 </Link>
+                {blogLinkFlag && (
+                  <a href={blogLink} title="blog-article" target="_blank">
+                    <Button
+                      text="Blog"
+                      className="mt-2 p-1 hover:bg-gold hover:text-navy hover:border-navy hover:border-2 hover:rounded-md"
+                    />
+                  </a>
+                )}
               </div>
             </div>
           </div>
