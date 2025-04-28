@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Button from "@/components/Button";
-import Link from "next/link";
 import styles from "./FlipCard.module.css";
 import { useEffect, useState } from "react";
 
@@ -50,7 +49,7 @@ export default function FlipCard({
   techStackIconsImageHeight3?: number | undefined;
   shortDescription: string;
   projectLink?: string;
-  codeLink: string;
+  codeLink?: string;
   buttonProjectText: string;
   buttonCodeText: string;
   blogLink?: string;
@@ -58,11 +57,13 @@ export default function FlipCard({
   const [isFlipped, setIsFlipped] = useState(false);
   const [thirdTechStackImage, setThirdTechStackImage] = useState(false);
   const [projectLinkFlag, setProjectLinkFlag] = useState(false);
+  const [codeLinkFlag, setCodeLinkFlag] = useState(false);
   const [blogLinkFlag, setBlogLinkFlag] = useState(false);
 
   useEffect(() => {
     if (techStackIconsImageSrc3) setThirdTechStackImage(true);
     if (projectLink) setProjectLinkFlag(true);
+    if (codeLink) setCodeLinkFlag(true);
     if (blogLink) setBlogLinkFlag(true);
   }, []);
 
@@ -129,12 +130,14 @@ export default function FlipCard({
                     />
                   </a>
                 )}
-                <Link href={codeLink} title="src-code" target="_blank">
-                  <Button
-                    text={buttonCodeText}
-                    className="ml-2 mt-2 p-1 hover:bg-gold hover:text-navy hover:border-navy hover:border-2 hover:rounded-md"
-                  />
-                </Link>
+                {codeLinkFlag && (
+                  <a href={codeLink} title="src-code" target="_blank">
+                    <Button
+                      text={buttonCodeText}
+                      className="ml-2 mt-2 p-1 hover:bg-gold hover:text-navy hover:border-navy hover:border-2 hover:rounded-md"
+                    />
+                  </a>
+                )}
                 {blogLinkFlag && (
                   <a href={blogLink} title="blog-article" target="_blank">
                     <Button
