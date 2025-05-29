@@ -1,7 +1,17 @@
 import Navbar from "@/components/Navbar";
-import Button from "@/components/Button";
+import ButtonAndImage from "@/components/ButtonAndImage";
 import Footer from "@/components/Footer";
-import Image from "next/image";
+
+/**
+ *
+ * TODO: DB integration
+ *
+ * 1. use SWR to fetch from API for each tech stack
+ * 2. getStaticProps originally to show default projects - decide what these will be
+ *
+ * /api/
+ 
+ */
 
 export default function SoftwarePage() {
   // TODO: onClick handlers for each button to query for projects by lang
@@ -13,43 +23,42 @@ export default function SoftwarePage() {
           Software Projects
         </p>
         <div className="flex flex-row justify-center space-x-4 pb-10">
-          <Button
-            text="JavaScript"
-            className="mt-2 p-1 bg-gold text-navy border-navy border-2 rounded-md"
-          ></Button>
-          <Button
-            text="C/C++/C#"
-            className="mt-2 p-1 bg-gold text-navy border-navy border-2 rounded-md"
-          ></Button>
-          <Button
-            text="Java"
-            className="mt-2 p-1 bg-gold text-navy border-navy border-2 rounded-md"
-          ></Button>
-          <Button
-            text="Python"
-            className="mt-2 p-1 bg-gold text-navy border-navy border-2 rounded-md"
-          ></Button>
-          {/**TODO: 2 options: 1-create component to make below reusable (ButtonAndImage - component) 2-keep buttons as is you'd only be adding an image to 2 buttons*/}
-          <button className="text-navy flex flex-row space-x-2 p-4 border-2 rounded-md">
-            Javascript
-            <span className="flex flex-row pl-2">
-              <Image
-                src="/images/tech-stack-logos/javascript.svg"
-                alt="src-alt"
-                width={16}
-                height={16}
-              ></Image>
-            </span>
-          </button>
-
-          <Button
-            text="AI/ML"
-            className="mt-2 p-1 bg-gold text-navy border-navy border-2 rounded-md"
-          ></Button>
-          <Button
-            text="Shell/Databases"
-            className="mt-2 p-1 bg-gold text-navy border-navy border-2 rounded-md"
-          ></Button>
+          <ButtonAndImage
+            className="text-navy flex flex-row space-x-2 p-4 border-creme border-2 rounded-md bg-gold hover:border-navy"
+            buttonTitle="C/C++/C#"
+            imgSrc="/images/tech-stack-logos/next.svg"
+            imgAltText="next-logo"
+          />
+          <ButtonAndImage
+            className="text-navy flex flex-row space-x-2 p-4 border-creme border-2 rounded-md bg-gold hover:border-navy"
+            buttonTitle="Java"
+            imgSrc="/images/tech-stack-logos/next.svg"
+            imgAltText="next-logo"
+          />
+          <ButtonAndImage
+            className="text-navy flex flex-row space-x-2 p-4 border-creme border-2 rounded-md bg-gold hover:border-navy"
+            buttonTitle="Python"
+            imgSrc="/images/tech-stack-logos/next.svg"
+            imgAltText="next-logo"
+          />
+          <ButtonAndImage
+            className="text-navy flex flex-row space-x-2 p-4 border-creme border-2 rounded-md bg-gold hover:border-navy"
+            buttonTitle="JS/TS"
+            imgSrc="/images/tech-stack-logos/next.svg"
+            imgAltText="next-logo"
+          />
+          <ButtonAndImage
+            className="text-navy flex flex-row space-x-2 p-4 border-creme border-2 rounded-md bg-gold hover:border-navy"
+            buttonTitle="AI/ML"
+            imgSrc="/images/tech-stack-logos/next.svg"
+            imgAltText="next-logo"
+          />
+          <ButtonAndImage
+            className="text-navy flex flex-row space-x-2 p-4 border-creme border-2 rounded-md bg-gold hover:border-navy"
+            buttonTitle="Shell/Databases"
+            imgSrc="/images/tech-stack-logos/next.svg"
+            imgAltText="next-logo"
+          />
         </div>
         {/* TODO: div for project query results to appear */}
       </div>
