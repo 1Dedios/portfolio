@@ -1,24 +1,5 @@
-import mongoose, { Document, Schema, Model } from "mongoose";
-
-// TODO: after confirming it works move the interface definition to their interface dir under types
-export interface TechStack {
-  name: string;
-  img: string;
-  altText: string;
-}
-
-export interface InterfaceProjects extends Document {
-  title: string;
-  type: string;
-  proj_img: string;
-  proj_img_alt: string;
-  tracking: string;
-  status: string;
-  "tech-stacks": TechStack[];
-  description: string;
-  "proj-link"?: string;
-  "src-link"?: string;
-}
+import mongoose, { Schema, Model } from "mongoose";
+import { TechStack, InterfaceProjects } from "@/types/interface/mongoose-interfaces";
 
 const projectsDBSchema: Schema<InterfaceProjects> = new Schema<InterfaceProjects>({
   title: { type: String, required: true, unique: true },

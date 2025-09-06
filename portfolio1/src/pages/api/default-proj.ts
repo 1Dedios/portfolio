@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import ProjectsDBModel, { InterfaceProjects } from "@/models/ProjectsDBModel";
 import connectDB from "@/util/mongoService";
+import ProjectsDBModel from "@/models/ProjectsDBModel";
+import { InterfaceProjects } from "@/types/interface/mongoose-interfaces";
 
 type ResponseData = {
   status: boolean;

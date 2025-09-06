@@ -2,16 +2,23 @@ import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Button from "@/components/Button";
 import ButtonAndImage from "@/components/ButtonAndImage";
-import { InterfaceProjects } from "@/models/ProjectsDBModel";
+import { InterfaceProjects } from "@/types/interface/mongoose-interfaces";
 import Footer from "@/components/Footer";
 import FlipCard from "@/components/FlipCard";
 
-// TODO: defaultProjects create props type
 export default function SoftwarePage() {
   /* TODO: 'static' state = default proj view - 'dynamic' state = queried view*/
   const [currView, setCurrView] = useState(true);
   const [projects, setProjects] = useState<InterfaceProjects[]>([]);
+  const projImgSize = 45;
   const techStackIconSize = 16;
+
+  useEffect(() => {
+    fetchDefaultProjects().then((proj) => {
+      setProjects(proj.data);
+    });
+  }, []);
+
   const fetchDefaultProjects = async () => {
     try {
       const res = await fetch("/api/default-proj");
@@ -22,12 +29,6 @@ export default function SoftwarePage() {
       console.error(e);
     }
   };
-
-  useEffect(() => {
-    fetchDefaultProjects().then((proj) => {
-      setProjects(proj.data);
-    });
-  }, []);
 
   console.log("PROJECTS", projects);
 
@@ -84,14 +85,13 @@ export default function SoftwarePage() {
         {currView &&
           projects?.map((proj) => {
             return (
-              // ← ADD THIS RETURN STATEMENT
               <div>
                 <FlipCard
                   title={proj.title}
                   imgSrc={proj.proj_img}
                   imgAlt={proj.proj_img_alt}
-                  imgWidth={techStackIconSize}
-                  imgHeight={techStackIconSize}
+                  imgWidth={projImgSize}
+                  imgHeight={projImgSize}
                   projectType={proj.type}
                   techStackIconsImageSrc={proj["tech-stacks"][0]?.img}
                   techStackIconsImageAlt={proj["tech-stacks"][0]?.altText}
@@ -123,15 +123,3 @@ export default function SoftwarePage() {
     </>
   );
 }
-
-/* export const getStaticProps: Promise<GetStaticProps> = async () => {
-  try {
-    // TODO: create API to query for default projects
-    const res = await fetch("/api/default-proj");
-    const defaultProjects = await res.json();
-    return { props: { defaultProjects } };
-  } catch (e) {
-    console.log(e);
-  }
-};
- */
