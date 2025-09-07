@@ -10,9 +10,9 @@ export default function Navbar() {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      {/* extreme left elements */}
+
+      {/* mobile menu */}
       <div className="navbar-start mr-4">
-        {/* mobile menu */}
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost btn-circle lg:hidden">
             <svg
@@ -35,29 +35,30 @@ export default function Navbar() {
             className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <Link href="/">Software</Link>
+              <Link href="/software-projects">Software</Link>
             </li>
             <li>
-              <Link href="/">CyberSecurity</Link>
+              <Link href="/sec-projects">CyberSecurity</Link>
             </li>
             <li>
-              <Link href="/">Blog</Link>
+              <Link href="/blog">Blog</Link>
             </li>
             <li>
-              <Link href="/">Resume</Link>
+              <Link href="/whoami">Whoami</Link>
             </li>
             <li>
-              <Link href="/">Contact</Link>
+              <Link href="https://1dedios.github.io/resume/" target="_blank">
+                Resume
+              </Link>
             </li>
             <li>
-              <Link href="/">About</Link>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
         </div>
       </div>
 
       {/* links to the left of the logo */}
-      {/* TODO: add visited property to links to change color when they've been clicked */}
       <div>
         <ul className="flex flex-row space-x-8">
           <li className="hover:text-gold hover:uppercase hover:font-semibold">
@@ -78,14 +79,16 @@ export default function Navbar() {
         </Link>
       </div>
 
-      {/* links to the right of the logo */}
+      {/* links to right */}
       <div>
         <ul className="flex flex-row space-x-8 ">
           <li className="hover:text-gold hover:uppercase hover:font-semibold">
             <Link href="/whoami">Whoami</Link>
           </li>
           <li className="hover:text-gold hover:uppercase hover:font-semibold">
-            <Link href="/resume">Resume</Link>
+            <Link href="https://1dedios.github.io/resume/" target="_blank">
+              Resume
+            </Link>
           </li>
           <li className="hover:text-gold hover:uppercase hover:font-semibold">
             <Link href="/contact">Contact</Link>
@@ -93,7 +96,7 @@ export default function Navbar() {
         </ul>
       </div>
 
-      {/* extreme right elements */}
+      {/* logos */}
       <div className="navbar-end gap-4 mr-4">
         <Link href="https://www.linkedin.com/in/epadilla1/">
           <UilLinkedin />
