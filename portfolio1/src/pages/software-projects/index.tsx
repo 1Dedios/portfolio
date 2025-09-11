@@ -21,16 +21,13 @@ export default function SoftwarePage() {
 
   const fetchDefaultProjects = async () => {
     try {
-      const res = await fetch("/api/default-proj");
-      const defProjects = await res.json();
-      console.log("CLIENT RECEIVED: ", defProjects);
-      return defProjects;
+      const res = await fetch("/api/default-proj", { next: { revalidate: 3600 } });
+      const defaultProjects = await res.json();
+      return defaultProjects;
     } catch (e) {
       console.error(e);
     }
   };
-
-  console.log("PROJECTS", projects);
 
   const handleProjQueries = async (projType: string) => {
     // TODO: make GET requests for projType = security, web, cli cloud- need to change this in DB
