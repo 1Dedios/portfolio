@@ -1,7 +1,12 @@
 import Image from "next/image";
 import Head from "next/head";
 import Logo from "/public/logo.png";
-import { UilGithub, UilLinkedin, UilEnvelopeCheck } from "@iconscout/react-unicons";
+import {
+  UilGithub,
+  UilLinkedin,
+  UilEnvelopeCheck,
+  UilLamp,
+} from "@iconscout/react-unicons";
 import Link from "next/link";
 
 export default function Navbar() {
@@ -96,7 +101,7 @@ export default function Navbar() {
         </ul>
       </div>
 
-      {/* logos */}
+      {/* icons */}
       <div className="navbar-end gap-4 mr-4">
         <Link href="https://www.linkedin.com/in/epadilla1/">
           <UilLinkedin />
@@ -104,7 +109,14 @@ export default function Navbar() {
         <Link href="https://github.com/1Dedios">
           <UilGithub />
         </Link>
-        <UilEnvelopeCheck />
+        <Link href="/contact">
+          <UilEnvelopeCheck />
+        </Link>
+
+        {/* theme picker */}
+        <div className="inset-ring-2 inset-ring-blue-500">
+          <UilLamp />
+        </div>
       </div>
     </div>
   );
