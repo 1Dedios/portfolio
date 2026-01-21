@@ -1,5 +1,3 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import Carousel from "@/components/Carousel";
 import bioImage from "/public/images/the_boss.jpg";
 import Image from "next/image";
@@ -11,10 +9,7 @@ export default function AboutPage() {
   return (
     <>
       <div className="bg-creme">
-        <Navbar />
-        <p className="text-navy font-nosifer text-6xl text-center mt-4 pt-4 pb-10">
-          Eddie P.
-        </p>
+        <p className="text-navy font-nosifer text-6xl text-center pt-4 pb-10">Eddie P.</p>
         <div className="flex flex-row justify-center space-x-4 mt-10 mb-10">
           <div className="border-dashed border-2 border-purple rounded-md">
             <Image
@@ -48,7 +43,6 @@ export default function AboutPage() {
           Certifications
         </p>
         <Carousel imagesArray={certsImagesArray} imagesAltTextArray={certsAltTextArray} />
-        <Footer />
       </div>
     </>
   );

@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
-import Navbar from "@/components/Navbar";
 import Button from "@/components/Button";
 import ButtonAndImage from "@/components/ButtonAndImage";
 import { InterfaceProjects } from "@/types/interface/mongoose-interfaces";
-import Footer from "@/components/Footer";
 import FlipCard from "@/components/FlipCard";
 
 export default function SoftwarePage() {
@@ -40,7 +38,6 @@ export default function SoftwarePage() {
 
   return (
     <>
-      <Navbar />
       <div className="bg-creme">
         <p className="text-navy font-nosifer text-6xl text-center pt-4 pb-10">
           Software Projects
@@ -116,7 +113,6 @@ export default function SoftwarePage() {
             );
           })}
       </div>
-      <Footer />
     </>
   );
 }
