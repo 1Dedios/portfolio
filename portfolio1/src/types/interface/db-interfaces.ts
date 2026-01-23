@@ -1,4 +1,4 @@
-import { Document } from "mongodb";
+import { ObjectId } from "mongodb";
 
 export interface TechStack {
   name: string;
@@ -6,7 +6,8 @@ export interface TechStack {
   altText: string;
 }
 
-export interface InterfaceProjects extends Document {
+export interface Projects {
+  _id: ObjectId | string;
   title: string;
   type: string;
   proj_img: string;

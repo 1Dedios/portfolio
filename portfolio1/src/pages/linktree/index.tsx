@@ -62,12 +62,7 @@ export default function LinkTree() {
             <UilDiscord />
           </Link>
           <Link href={"https://x.com/0x1Dedios"} target="_blank">
-            <Image
-              src="/images/twitter-x.png"
-              alt="twitter-logo"
-              width={24}
-              height={24}
-            />
+            <Image src="/twitter-x.png" alt="twitter-logo" width={24} height={24} />
           </Link>
         </div>
       </div>
