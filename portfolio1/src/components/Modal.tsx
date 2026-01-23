@@ -12,7 +12,7 @@ export default function Modal({ closeModal }: { closeModal: any }) {
         <Button
           onClick={closeModal}
           text="cool 👍🏽"
-          className="text-creme border-2 rounded-md p-2 px-8"
+          className="text-creme border-2 rounded-md p-2 px-8 hover:bg-gold hover:text-xl hover:text-black"
         ></Button>
       </div>
     </div>

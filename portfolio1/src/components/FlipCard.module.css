@@ -1,8 +1,16 @@
 .flip_card {
   margin: 100px auto 0;
-  width: 600px;
-  height: 500px;
+  width: 500px;
+  height: 650px;
   perspective: 1000px;
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}
+
+.unflipped {
+  transform: rotateY(360deg);
 }
 
 .flip_card_inner {

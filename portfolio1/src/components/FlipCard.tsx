@@ -28,6 +28,7 @@ export default function FlipCard({
   buttonProjectText,
   buttonCodeText,
   blogLink,
+  buttonBlogText,
 }: {
   title: string;
   imgSrc: any;
@@ -53,6 +54,7 @@ export default function FlipCard({
   buttonProjectText: string;
   buttonCodeText: string;
   blogLink?: string;
+  buttonBlogText?: string;
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [thirdTechStackImage, setThirdTechStackImage] = useState(false);
@@ -75,14 +77,13 @@ export default function FlipCard({
     }
   };
 
-  const flipStyle = {
-    transform: isFlipped ? "rotateY(180deg)" : "rotateY(360deg)",
-  };
-
   return (
     <>
-      <div className={`${styles.flip_card}`}>
-        <div className={styles.flip_card_inner} style={flipStyle} onClick={cardFlip}>
+      <div className={`${styles.flip_card} hover:cursor-pointer`}>
+        <div
+          className={`${styles.flip_card_inner} ${isFlipped ? styles.flipped : styles.unflipped}`}
+          onClick={cardFlip}
+        >
           <div
             className={`flex flex-col ${styles.flip_card_face} ${styles.flip_card_face_front}`}
           >
@@ -122,6 +123,14 @@ export default function FlipCard({
                   )}
                 </div>
                 <p className="text-creme italic">{shortDescription}</p>
+                {codeLinkFlag && (
+                  <a href={codeLink} title="src-code" target="_blank">
+                    <Button
+                      text={buttonCodeText}
+                      className="mt-2 p-1 hover:bg-gold hover:text-navy hover:border-navy hover:border-2 hover:rounded-md"
+                    />
+                  </a>
+                )}
                 {projectLinkFlag && (
                   <a href={projectLink} title={title} target="_blank">
                     <Button
@@ -130,18 +139,10 @@ export default function FlipCard({
                     />
                   </a>
                 )}
-                {codeLinkFlag && (
-                  <a href={codeLink} title="src-code" target="_blank">
-                    <Button
-                      text={buttonCodeText}
-                      className="ml-2 mt-2 p-1 hover:bg-gold hover:text-navy hover:border-navy hover:border-2 hover:rounded-md"
-                    />
-                  </a>
-                )}
                 {blogLinkFlag && (
                   <a href={blogLink} title="blog-article" target="_blank">
                     <Button
-                      text="Blog"
+                      text={buttonBlogText!}
                       className="mt-2 p-1 hover:bg-gold hover:text-navy hover:border-navy hover:border-2 hover:rounded-md"
                     />
                   </a>

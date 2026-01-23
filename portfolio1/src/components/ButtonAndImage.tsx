@@ -18,7 +18,7 @@ export default function ButtonAndImage({
     <button onClick={onClick} className={className}>
       {text}
       <span className="flex flex-row pl-2">
-        <Image src={imgSrc} alt={imgAltText} width={16} height={16}></Image>
+        <Image src={imgSrc} alt={imgAltText} width={20} height={40}></Image>
       </span>
     </button>
   );

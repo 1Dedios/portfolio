@@ -6,7 +6,7 @@ import { escapeHTML } from "@/util/escapeHTML";
 import Modal from "./Modal";
 import Button from "./Button";
 import Image from "next/image";
-import logo from "/public/dedios_logo.png";
+import { useTheme } from "./Theme";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -15,6 +15,7 @@ export default function Contact() {
   const [about, setAbout] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { theme, assets } = useTheme();
 
   const [nameErrorFocus, setNameErrorFocus] = useState(false);
   const [emailErrorFocus, setEmailErrorFocus] = useState(false);
@@ -104,86 +105,97 @@ export default function Contact() {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <div className="relative p-40 bg-creme">
-      <h1 className="text-center text-6xl text-navy font-bold font-poppins pb-10">
-        COLLABORATION
-      </h1>
-      <div className="flex justify-center pt-5">
-        <Image src={logo} alt="dedios logo" width="128" height="128" />
-      </div>
-      <p className="pt-5 text-xl text-center text-navy font-semibold">Have a project?</p>
-      <p className="text-center textarea-md text-navy font-semibold">
-        I&apos;m open to projects and Technical Writing opportunities.
-      </p>
-      <form
-        onSubmit={handleSubmit}
-        className="text-navy leading-10"
-        {...(isModalOpen ? { inert: "true" } : {})}
-      >
-        <div className="flex flex-col p-10 font-semibold">
-          <label htmlFor="name">Name:*</label>
-          <input
-            value={name}
-            onChange={getName}
-            type="text"
-            id="name"
-            name="name"
-            required
-            className="focus:ring-4 focus:ring-purple  text-creme bg-navy"
-          />
-          {nameErrorFocus && <p className="text-red-500 italic">{nameErrorMessage}</p>}
-          <label htmlFor="email">Email:*</label>
-          <input
-            value={email}
-            onChange={getEmail}
-            type="email"
-            id="email"
-            name="email"
-            required
-            className="focus:ring-4 focus:ring-purple text-creme bg-navy"
-          />
-          {emailErrorFocus && <p className="text-red-500 italic">{emailErrorMessage}</p>}
-          <label htmlFor="service">What service(s) are you looking for?*</label>
-          <input
-            value={service}
-            onChange={getService}
-            type="text"
-            id="service"
-            name="service"
-            required
-            className="focus:ring-4 focus:ring-purple text-creme bg-navy"
-          />
-          {serviceErrorFocus && (
-            <p className="text-red-500 italic">{serviceErrorMessage}</p>
-          )}
-          <label htmlFor="about">Tell Me More...*</label>
-          <textarea
-            value={about}
-            onChange={getAbout}
-            id="about"
-            name="about"
-            required
-            className="focus:ring-4 focus:ring-purple text-creme bg-navy"
-            rows={4}
-            maxLength={500}
-          ></textarea>
-          {aboutErrorFocus && <p className="text-red-500 italic">{aboutErrorMessage}</p>}
-          {isLoading ? (
-            <Button
-              className="mt-6 hover:uppercase hover:bg-gold rounded-lg"
-              text="Submitting..."
-              disabled={isLoading}
-            />
-          ) : (
-            <Button
-              className="mt-6 hover:uppercase hover:bg-gold rounded-lg"
-              text="Submit"
-              disabled={isLoading}
-            />
-          )}
+    <div className={theme === "dev" ? "hacker" : "dev"}>
+      <div className={assets.contactPageCSS}>
+        <h1 className="text-center text-6xl font-bold font-poppins pb-10">
+          COLLABORATION
+        </h1>
+        <hr />
+        <div className="flex justify-center pt-5">
+          <Image src={assets.contactPageLogo} alt="" width="128" height="128" />
         </div>
-      </form>
-      {isModalOpen && <Modal closeModal={closeModal}></Modal>}
+        <p className="pt-5 text-xl text-center font-semibold">Have a project?</p>
+        <p className="text-center textarea-md font-semibold">
+          I&apos;m open to projects and Technical Writing opportunities.
+        </p>
+        <form
+          onSubmit={handleSubmit}
+          className="leading-10"
+          {...(isModalOpen ? { inert: "true" } : {})}
+        >
+          <div className={assets.contactFormCSS}>
+            <label htmlFor="name">
+              Name:<span className="text-rose-600">*</span>
+            </label>
+            <input
+              value={name}
+              onChange={getName}
+              type="text"
+              id="name"
+              name="name"
+              required
+            />
+            {nameErrorFocus && <p className="text-rose-600 italic">{nameErrorMessage}</p>}
+            <label htmlFor="email">
+              Email:<span className="text-rose-600">*</span>
+            </label>
+            <input
+              value={email}
+              onChange={getEmail}
+              type="email"
+              id="email"
+              name="email"
+              required
+            />
+            {emailErrorFocus && (
+              <p className="text-rose-600 italic">{emailErrorMessage}</p>
+            )}
+            <label htmlFor="service">
+              What service(s) are you looking for?<span className="text-rose-600">*</span>
+            </label>
+            <input
+              value={service}
+              onChange={getService}
+              type="text"
+              id="service"
+              name="service"
+              required
+            />
+            {serviceErrorFocus && (
+              <p className="text-rose-600 italic">{serviceErrorMessage}</p>
+            )}
+            <label htmlFor="about">
+              Tell Me More...<span className="text-rose-600">*</span>
+            </label>
+            <textarea
+              value={about}
+              onChange={getAbout}
+              id="about"
+              name="about"
+              required
+              rows={4}
+              maxLength={500}
+            ></textarea>
+            {aboutErrorFocus && (
+              <p className="text-rose-600 italic">{aboutErrorMessage}</p>
+            )}
+            {isLoading ? (
+              <Button
+                className={assets.contactFormButtonCSS}
+                text="Submitting..."
+                disabled={isLoading}
+              />
+            ) : (
+              <Button
+                className={assets.contactFormButtonCSS}
+                text="Submit"
+                disabled={isLoading}
+              />
+            )}
+          </div>
+        </form>
+        {isModalOpen && <Modal closeModal={closeModal}></Modal>}
+      </div>
     </div>
   );
 }
