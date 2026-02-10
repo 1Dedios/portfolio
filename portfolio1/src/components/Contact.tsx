@@ -105,9 +105,9 @@ export default function Contact() {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <div className={theme === "dev" ? "hacker" : "dev"}>
+    <div className={theme === "dev" ? "hacker" : "dev"} id="contact-page">
       <div className={assets.contactPageCSS}>
-        <h1 className="text-center text-6xl font-bold font-poppins pb-10">
+        <h1 className="text-center text-5xl md:text-6xl font-bold font-poppins p-4">
           COLLABORATION
         </h1>
         <hr />

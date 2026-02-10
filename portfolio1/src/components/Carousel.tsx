@@ -12,15 +12,19 @@ export default function Carousel({
   return (
     <div>
       <div className={className}>
-        <div className="carousel rounded-box flex space-x-4">
+        <div
+          /* grid grid-cols-${imagesArray.length} */
+          className={`carousel rounded-box flex space-x-4 justify-center`}
+        >
           {imagesArray.map((image, index) => {
             return (
               <Image
                 src={image}
                 key={index}
                 alt={imagesAltTextArray[index]}
-                width={80}
-                height={80}
+                width={60}
+                height={60}
+                className="h-auto"
               />
             );
           })}

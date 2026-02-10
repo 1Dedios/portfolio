@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../../../public/watermelon_me_bitmoji.png";
@@ -8,6 +9,9 @@ export default function LinkTree() {
   return (
     <>
       <div className="flex flex-col items-center h-screen text-center">
+        <Head>
+          <title>Linktree</title>
+        </Head>
         <div>
           <Link href={"/"} target="_blank">
             <div className="flex flex-col items-center avatar mt-20 mb-6">

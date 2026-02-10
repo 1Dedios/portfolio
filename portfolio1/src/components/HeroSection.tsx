@@ -32,8 +32,8 @@ export default function HeroSection() {
   return (
     <div className={theme === "dev" ? "hacker" : "dev"}>
       <div className={`${assets.heroCSS} bg-[url('/dedios_logo.png')]`}>
-        <div className="hero-content text-center">
-          <div className="max-w-md">
+        <div className="hero-content text-center mt-40">
+          <div>
             <Image
               src={assets.heroImage}
               alt="watermelon-logo"
@@ -41,9 +41,7 @@ export default function HeroSection() {
               width={400}
               height={400}
             />
-            <span className="rounded-lg p-4 bg-creme shadow-md shadow-slate-200 font-sans text-navy text-center italic w-64 absolute top-1/3 xl:left-40 lg:mx-40 lg:my-20 md:inline md:-left-0 md:mx-10">
-              {assets.heroBlurb}
-            </span>
+            <span className={assets.heroBlurbCSS}>{assets.heroBlurb}</span>
             <div className={assets.heroTitleCSS}>
               <AttentionSeeker effect="tada">Eddie P</AttentionSeeker>
             </div>

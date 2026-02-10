@@ -15,15 +15,22 @@ export default function Footer() {
           alt=""
           height={350}
           width={350}
+          className="w-full h-auto sm:w-1/3"
         />
       </div>
       <div className={assets.footerCSS}>
         <Link href="/">
-          <Image src={assets.footerImage} alt="home" width={250} height={100} />
+          <Image
+            src={assets.footerImage}
+            alt="home"
+            width={200}
+            height={20}
+            className="max-w-400 h-auto"
+          />
         </Link>
         <IconTray />
         <Link href="https://www.credly.com/users/eddiep">
-          <Image src="/credly-icon.png" alt="home" width={64} height={64} />
+          <Image src="/credly-icon.png" alt="home" width={44} height={44} />
         </Link>
         <div className={assets.footerNetworksCSS}>
           <Image src="/stevens-logo-nobg.png" alt="" height={100} width={100} />

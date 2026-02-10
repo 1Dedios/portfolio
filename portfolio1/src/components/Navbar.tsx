@@ -8,7 +8,7 @@ export default function Navbar() {
 
   return (
     <div className={assets.navbarCSS}>
-      <div className="navbar-start mr-4">
+      <div className="navbar-start">
         {/* mobile menu */}
         <div className="dropdown lg:hidden">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
@@ -29,13 +29,19 @@ export default function Navbar() {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            className={`menu menu-sm dropdown-content mt-3 p-2 shadow rounded-box w-52 ${assets.navbarMobileMenu}`}
           >
             <li>
-              <Link href="/projects">{theme === "dev" ? "Software" : "Security"}</Link>
+              <Link href={"/"} className="flex flex-row gap-2">
+                Blog{" "}
+                <span>
+                  {" "}
+                  <div className={assets.notificationBadge}>Soon</div>{" "}
+                </span>
+              </Link>
             </li>
             <li>
-              <Link href="/blog">Blog</Link>
+              <Link href="/projects">{theme === "dev" ? "Software" : "Security"}</Link>
             </li>
             <li>
               <Link href="/whoami">Whoami</Link>
@@ -60,8 +66,8 @@ export default function Navbar() {
           {/* dev icon */}
           <svg
             fill="#fffae6"
-            width="40px"
-            height="40px"
+            width="20px"
+            height="20px"
             viewBox="0 0 32 32"
             xmlns="http://www.w3.org/2000/svg"
             stroke="#fffae6"
@@ -75,8 +81,8 @@ export default function Navbar() {
             version="1.1"
             id="_x32_"
             xmlns="http://www.w3.org/2000/svg"
-            width="40px"
-            height="40px"
+            width="20px"
+            height="20px"
             viewBox="0 0 512 512"
             fill="#01fe01"
             stroke="#01fe01"
@@ -101,7 +107,13 @@ export default function Navbar() {
             <Link href="/projects">{theme === "dev" ? "Software" : "Security"}</Link>
           </li>
           <li className={assets.navbarLinkCSS}>
-            <Link href="/blog">Blog</Link>
+            <Link href={"/"} className="flex flex-row gap-2">
+              Blog{" "}
+              <span>
+                {" "}
+                <div className={assets.notificationBadge}>Soon</div>{" "}
+              </span>
+            </Link>
           </li>
         </ul>
       </div>
@@ -112,8 +124,9 @@ export default function Navbar() {
           <Image
             src={assets.logo}
             alt={theme === "dev" ? "logo" : "sec-me"}
-            width={160}
-            height={160}
+            width={100}
+            height={60}
+            className="h-auto"
           />
         </Link>
       </div>

@@ -31,8 +31,11 @@ export interface ThemeContextType {
     logo: string;
     navbarCSS: string;
     navbarLinkCSS: string;
+    navbarMobileMenu: string;
+    notificationBadge: string;
     heroCSS: string;
     heroBlurb: string;
+    heroBlurbCSS: string;
     heroImage: string;
     heroImageCSS: string;
     heroTitleCSS: string;
@@ -47,6 +50,7 @@ export interface ThemeContextType {
     homeProjectSectionButtonCSS: string;
     projectPageCSS: string;
     projectPageTitleCSS: string;
+    blogPage: string;
     aboutPageCSS: string;
     aboutPageBioCSS: string;
     aboutPageTitleCSS: string;
@@ -65,6 +69,7 @@ export interface ThemeContextType {
     aboutPageCollapseOpenDates2: string;
     aboutPageCollapseBadges: string;
     aboutPageEducationLogo: string;
+    aboutPageLastAnimePanel: string;
     contactPageCSS: string;
     contactPageLogo: string;
     contactFormCSS: string;

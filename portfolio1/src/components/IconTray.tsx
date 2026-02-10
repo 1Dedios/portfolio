@@ -12,27 +12,26 @@ export default function IconTray() {
         <>
           <div className="flex flex-row space-x-2">
             <Link href="https://www.linkedin.com/in/epadilla1/">
-              <UilLinkedin />
+              <UilLinkedin width={18} height={18} />
             </Link>
             <Link href="https://github.com/1Dedios">
-              <UilGithub />
+              <UilGithub width={18} height={18} />
             </Link>
-            <Link href="/contact">
-              <UilEnvelopeCheck />
+            <Link href="/#contact-page">
+              <UilEnvelopeCheck width={18} height={18} />
             </Link>
           </div>
-          <div></div>
         </>
       ) : (
         <>
           <div className="flex flex-row space-x-2">
             <Link href="https://www.linkedin.com/in/epadilla1/">
-              <Image src="/linkedin-green.png" alt="" width={24} height={24} />
+              <Image src="/linkedin-green.png" alt="" width={28} height={28} />
             </Link>
             <Link href="https://github.com/1Dedios">
               <Image src="/git-green.png" alt="github" width={24} height={24} />
             </Link>
-            <Link href="/contact">
+            <Link href="/#contact-page">
               <Image src="/green-send-icon.png" alt="" width={24} height={24} />
             </Link>
           </div>

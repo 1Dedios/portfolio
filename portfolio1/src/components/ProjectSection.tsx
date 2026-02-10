@@ -35,7 +35,7 @@ export default function ProjectSection() {
               height={28}
             />
           </div>
-          <div className="flex flex-wrap justify-evenly content-center p-10">
+          <div className="flex flex-wrap justify-evenly content-center">
             {filterProjects.map((proj) => {
               return (
                 <FlipCard
@@ -71,7 +71,7 @@ export default function ProjectSection() {
             })}
           </div>
 
-          <div className="flex flex-col items-center justify-center pt-8">
+          <div className="flex flex-col items-center justify-center p-4">
             <Link href="/projects">
               <Button text="See 👀 More" className={assets.homeProjectSectionButtonCSS} />
             </Link>

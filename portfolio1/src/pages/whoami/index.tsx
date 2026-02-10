@@ -16,8 +16,22 @@ export default function AboutPage() {
 
           {/* anime panel */}
           <div className="flex flex-row justify-center p-10">
-            <Image src="/anime-panel.png" alt="" width={400} height={200} />
-            <Image src="/anime-panel2.png" alt="" width={200} height={200} />
+            <Image
+              src="/anime-panel.png"
+              alt=""
+              width={400}
+              height={200}
+              priority
+              className="max-w-full max-h-fit"
+            />
+            <Image
+              src="/anime-panel2.png"
+              alt=""
+              width={200}
+              height={150}
+              priority
+              className="max-w-full max-h-full md:max-h-fit"
+            />
           </div>
 
           {/* quote */}
@@ -33,19 +47,21 @@ export default function AboutPage() {
           </div>
 
           {/* image and bio */}
-          <div className="flex flex-row justify-around space-x-4 mt-10 mb-10 p-4">
-            <div>
+          {/* prev class val - "flex flex-row justify-around space-x-4 mt-10 mb-10 p-4" */}
+          <div className="grid grid-cols-1 gap-4 md:flex md:justify-around md:space-x-4 md:p-4 md:mt-10 md:mb-10">
+            <div className="content-center place-items-center">
               <Image
                 className={assets.aboutPageMainImageCSS}
                 src="/the_boss.jpg"
                 alt=""
                 height={400}
                 width={400}
+                priority
               />
             </div>
             <div className="divider divider-horizontal"></div>
             <div className={assets.aboutPageBioCSS}>
-              <p className="leading-relaxed tracking-wide">
+              <p className="leading-relaxed tracking-wide text-pretty">
                 <span className={assets.aboutPageBioAccent1}>
                   Versatile Full-Stack Engineer{" "}
                 </span>
@@ -65,7 +81,7 @@ export default function AboutPage() {
                 </span>{" "}
               </p>
               <div className="divider"></div>
-              <p>
+              <p className="text-pretty">
                 {" "}
                 Moreover, I really enjoy the intersection between World Politics (my B.A)
                 and Cybersecurity. Cybersecurity's roots are in the military after all and
@@ -81,7 +97,7 @@ export default function AboutPage() {
           </div>
 
           {/* recreation */}
-          <div className="grid grid-cols-1 gap-4 p-10">
+          <div className="grid grid-cols-1 gap-4 p-8">
             <div className="collapse">
               <input type="checkbox" className="peer" title="fav-things-to-do" />
               <div className={assets.aboutPageCollapseClosed1}>
@@ -116,6 +132,7 @@ export default function AboutPage() {
                   </span>
                 </p>
                 <p>Stevens Tech Torchlight Mentorship</p>
+                <p>SANS Institute Cyber Immersion Academy - '25 -'26</p>
                 <div className="divider">
                   <span className={assets.aboutPageCollapseOpenDates2}> 2025 </span>
                 </div>
@@ -158,12 +175,12 @@ export default function AboutPage() {
           </div>
 
           {/* education */}
-          <div className="grid grid-cols-2 gap-4 pl-10 pr-10 pb-20 pt-20">
+          <div className="grid grid-cols-1 gap-4 p-8 place-items-center md:flex md:justify-around md:space-x-4 md:p-4">
             <div>
               <p className="flex justify-start text-2xl">EDUCATION</p>
               <div className="divider"></div>
               <div className="grid grid-rows-2 gap-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-4 align-middle">
                   <p>
                     Stevens Institute of Technology{" "}
                     <span className="italic font-poppins">M.S</span> Computer Science
@@ -186,7 +203,13 @@ export default function AboutPage() {
               </div>
             </div>
             <div>
-              <Image src="/anime-panel3.png" alt="" width={600} height={400} />
+              <Image
+                src="/anime-panel3.png"
+                alt=""
+                width={600}
+                height={400}
+                className={`max-w-full h-auto ${assets.aboutPageLastAnimePanel}`}
+              />
             </div>
           </div>
         </div>
