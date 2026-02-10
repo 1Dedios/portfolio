@@ -10,8 +10,8 @@ export default function Navbar() {
     <div className={assets.navbarCSS}>
       <div className="navbar-start mr-4">
         {/* mobile menu */}
-        <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost btn-circle lg:hidden">
+        <div className="dropdown lg:hidden">
+          <label tabIndex={0} className="btn btn-ghost btn-circle">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -32,10 +32,7 @@ export default function Navbar() {
             className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <Link href="/software-projects">Software</Link>
-            </li>
-            <li>
-              <Link href="/sec-projects">CyberSecurity</Link>
+              <Link href="/projects">{theme === "dev" ? "Software" : "Security"}</Link>
             </li>
             <li>
               <Link href="/blog">Blog</Link>
@@ -98,7 +95,7 @@ export default function Navbar() {
       </div>
 
       {/* links to the left of the logo */}
-      <div>
+      <div className="hidden lg:block">
         <ul className="flex flex-row space-x-8">
           <li className={assets.navbarLinkCSS}>
             <Link href="/projects">{theme === "dev" ? "Software" : "Security"}</Link>
@@ -122,7 +119,7 @@ export default function Navbar() {
       </div>
 
       {/* links to right */}
-      <div>
+      <div className="hidden lg:block">
         <ul className="flex flex-row space-x-8 ">
           <li className={assets.navbarLinkCSS}>
             <Link href="/whoami">Whoami</Link>
