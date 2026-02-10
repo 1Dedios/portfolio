@@ -2,12 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/Button";
 import { useTheme } from "@/components/Theme";
-import { filterProjBasedOnTheme, projObj } from "@/util/generalHelpers";
+import { filterProjBasedOnTheme, homePageProjShowcase } from "@/util/generalHelpers";
 import FlipCard from "@/components/FlipCard";
 
 export default function ProjectSection() {
   const { theme, assets } = useTheme();
-  const filterProjects = filterProjBasedOnTheme(projObj, theme!);
+  const filterProjects = filterProjBasedOnTheme(homePageProjShowcase, theme!);
   const flipCardImageWidth = 200;
   const flipCardImageHeight = 50;
 
@@ -35,7 +35,7 @@ export default function ProjectSection() {
               height={28}
             />
           </div>
-          <div className="flex flex-row space-x-4 justify-between">
+          <div className="flex flex-wrap justify-evenly content-center p-10">
             {filterProjects.map((proj) => {
               return (
                 <FlipCard
