@@ -1,9 +1,22 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-// TODO: API route for projects based on type
-type ResponseData = {
-  message: string;
-};
+import { ResponseData } from "@/types/types";
+import { queries } from "@/util/queries";
 
-export default function handler(req: NextApiRequest, res: NextApiResponse<ResponseData>) {
-  return res.status(200).json({ message: "john doe" });
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<ResponseData>
+) {
+  try {
+    const url = new URL(req.url!, `http://${req.headers.host}`);
+    const projectType = url.searchParams.get("projType");
+    console.log("SERVER PROJ TYPE PARAM", projectType);
+    const queryRes = await queries.projByTypeQuery(projectType!);
+    console.log("QUERY RESPONSE", queryRes);
+
+    res.setHeader("Cache-Control", "s-maxage=14400");
+    return res.status(200).json({ status: true, data: queryRes });
+  } catch (e) {
+    console.log(e);
+    return res.status(500).json({ status: false, error: `${e}` });
+  }
 }

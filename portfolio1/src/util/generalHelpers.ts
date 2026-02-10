@@ -1,7 +1,29 @@
 import { Theme } from "@/types/types";
+import { Projects } from "@/types/interface/db-interfaces";
+
+export const removeWordFromString = (stringToFormat: string, wordToRemove: string) => {
+  return `${stringToFormat}`
+    .split(" ")
+    .filter((word: string) => {
+      return word !== `${wordToRemove}`;
+    })
+    .join(" ");
+};
+
+export const onClickByType = async (projType: string): Promise<Projects[]> => {
+  // TODO: sanitize arg
+  const getProjects = await fetch(`/api/projects?projType=${projType}`);
+  const projects = await getProjects.json();
+  console.log("PROJ TYPE REQUEST: ", projects);
+  if (projects.status) {
+    return projects.data;
+  }
+
+  throw new Error(projects.error);
+};
 
 /**
- * ProjectSection Component
+ * Home Page - ProjectSection Component - helpers
  */
 const themeTypeMap = {
   dev: "web",
@@ -15,8 +37,8 @@ export const filterProjBasedOnTheme = <T extends { type: string }>(
   return projectObj.filter((proj) => proj.type === themeTypeMap[themeType]);
 };
 
-// TODO: implement the projects you want to showcase on home project section
-export const projObj = [
+// STATUS: SOLIDIFY which projects you want to showcase on home project section
+export const homePageProjShowcase = [
   /* STATUS: First 3 = "web" projects, Next 3 = "security" projects */
   {
     type: "web",
