@@ -47,7 +47,7 @@ export default function LinkTree() {
               className="text-center glass rounded-lg pt-4 pb-4 pr-10 pl-10"
             />
           </Link>
-          <Link href="/contact" target="_blank">
+          <Link href="/#contact-page" target="_blank">
             <Button
               text="Contact"
               textClassName="text-lime-400 italic"
